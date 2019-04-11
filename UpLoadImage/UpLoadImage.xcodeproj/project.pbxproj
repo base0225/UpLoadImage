@@ -1,0 +1,661 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD8451CD225F86F00022FA93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451CC225F86F00022FA93 /* AppDelegate.m */; };
+		AD8451D0225F86F00022FA93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451CF225F86F00022FA93 /* ViewController.m */; };
+		AD8451D3225F86F00022FA93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8451D1225F86F00022FA93 /* Main.storyboard */; };
+		AD8451D5225F86F10022FA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8451D4225F86F10022FA93 /* Assets.xcassets */; };
+		AD8451D8225F86F10022FA93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8451D6225F86F10022FA93 /* LaunchScreen.storyboard */; };
+		AD8451DB225F86F10022FA93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451DA225F86F10022FA93 /* main.m */; };
+		AD8451E5225F86F20022FA93 /* UpLoadImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451E4225F86F20022FA93 /* UpLoadImageTests.m */; };
+		AD8451F0225F86F20022FA93 /* UpLoadImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451EF225F86F20022FA93 /* UpLoadImageUITests.m */; };
+		D0ACF41EA17850D21FA095DB /* libPods-UpLoadImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7641F7BEEC22DCD43BAF1A57 /* libPods-UpLoadImage.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD8451E1225F86F20022FA93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD8451C0225F86F00022FA93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD8451C7225F86F00022FA93;
+			remoteInfo = UpLoadImage;
+		};
+		AD8451EC225F86F20022FA93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD8451C0225F86F00022FA93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD8451C7225F86F00022FA93;
+			remoteInfo = UpLoadImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7641F7BEEC22DCD43BAF1A57 /* libPods-UpLoadImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpLoadImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8451C8225F86F00022FA93 /* UpLoadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpLoadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8451CB225F86F00022FA93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AD8451CC225F86F00022FA93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AD8451CE225F86F00022FA93 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AD8451CF225F86F00022FA93 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AD8451D2225F86F00022FA93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD8451D4225F86F10022FA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD8451D7225F86F10022FA93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD8451D9225F86F10022FA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD8451DA225F86F10022FA93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AD8451E0225F86F20022FA93 /* UpLoadImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpLoadImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8451E4225F86F20022FA93 /* UpLoadImageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpLoadImageTests.m; sourceTree = "<group>"; };
+		AD8451E6225F86F20022FA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD8451EB225F86F20022FA93 /* UpLoadImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpLoadImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8451EF225F86F20022FA93 /* UpLoadImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpLoadImageUITests.m; sourceTree = "<group>"; };
+		AD8451F1225F86F20022FA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B15F733E1314C5C38B2F672A /* Pods-UpLoadImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpLoadImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpLoadImage/Pods-UpLoadImage.debug.xcconfig"; sourceTree = "<group>"; };
+		FA5B70BE3D4942A0F0586941 /* Pods-UpLoadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpLoadImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpLoadImage/Pods-UpLoadImage.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD8451C5225F86F00022FA93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0ACF41EA17850D21FA095DB /* libPods-UpLoadImage.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8451DD225F86F20022FA93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8451E8225F86F20022FA93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23121DF52D74B1FD4F3DBCFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7641F7BEEC22DCD43BAF1A57 /* libPods-UpLoadImage.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B90100F5309122D280FF5C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B15F733E1314C5C38B2F672A /* Pods-UpLoadImage.debug.xcconfig */,
+				FA5B70BE3D4942A0F0586941 /* Pods-UpLoadImage.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD8451BF225F86F00022FA93 = {
+			isa = PBXGroup;
+			children = (
+				AD8451CA225F86F00022FA93 /* UpLoadImage */,
+				AD8451E3225F86F20022FA93 /* UpLoadImageTests */,
+				AD8451EE225F86F20022FA93 /* UpLoadImageUITests */,
+				AD8451C9225F86F00022FA93 /* Products */,
+				4B90100F5309122D280FF5C7 /* Pods */,
+				23121DF52D74B1FD4F3DBCFE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AD8451C9225F86F00022FA93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD8451C8225F86F00022FA93 /* UpLoadImage.app */,
+				AD8451E0225F86F20022FA93 /* UpLoadImageTests.xctest */,
+				AD8451EB225F86F20022FA93 /* UpLoadImageUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD8451CA225F86F00022FA93 /* UpLoadImage */ = {
+			isa = PBXGroup;
+			children = (
+				AD8451CB225F86F00022FA93 /* AppDelegate.h */,
+				AD8451CC225F86F00022FA93 /* AppDelegate.m */,
+				AD8451CE225F86F00022FA93 /* ViewController.h */,
+				AD8451CF225F86F00022FA93 /* ViewController.m */,
+				AD8451D1225F86F00022FA93 /* Main.storyboard */,
+				AD8451D4225F86F10022FA93 /* Assets.xcassets */,
+				AD8451D6225F86F10022FA93 /* LaunchScreen.storyboard */,
+				AD8451D9225F86F10022FA93 /* Info.plist */,
+				AD8451DA225F86F10022FA93 /* main.m */,
+			);
+			path = UpLoadImage;
+			sourceTree = "<group>";
+		};
+		AD8451E3225F86F20022FA93 /* UpLoadImageTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD8451E4225F86F20022FA93 /* UpLoadImageTests.m */,
+				AD8451E6225F86F20022FA93 /* Info.plist */,
+			);
+			path = UpLoadImageTests;
+			sourceTree = "<group>";
+		};
+		AD8451EE225F86F20022FA93 /* UpLoadImageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD8451EF225F86F20022FA93 /* UpLoadImageUITests.m */,
+				AD8451F1225F86F20022FA93 /* Info.plist */,
+			);
+			path = UpLoadImageUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD8451C7225F86F00022FA93 /* UpLoadImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD8451F4225F86F20022FA93 /* Build configuration list for PBXNativeTarget "UpLoadImage" */;
+			buildPhases = (
+				0B612E85F88D8DEE9E794A64 /* [CP] Check Pods Manifest.lock */,
+				AD8451C4225F86F00022FA93 /* Sources */,
+				AD8451C5225F86F00022FA93 /* Frameworks */,
+				AD8451C6225F86F00022FA93 /* Resources */,
+				688212D2B77C212476EE39EC /* [CP] Embed Pods Frameworks */,
+				40D37AB3E79CA69DCB12B104 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UpLoadImage;
+			productName = UpLoadImage;
+			productReference = AD8451C8225F86F00022FA93 /* UpLoadImage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD8451DF225F86F20022FA93 /* UpLoadImageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD8451F7225F86F20022FA93 /* Build configuration list for PBXNativeTarget "UpLoadImageTests" */;
+			buildPhases = (
+				AD8451DC225F86F20022FA93 /* Sources */,
+				AD8451DD225F86F20022FA93 /* Frameworks */,
+				AD8451DE225F86F20022FA93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD8451E2225F86F20022FA93 /* PBXTargetDependency */,
+			);
+			name = UpLoadImageTests;
+			productName = UpLoadImageTests;
+			productReference = AD8451E0225F86F20022FA93 /* UpLoadImageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD8451EA225F86F20022FA93 /* UpLoadImageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD8451FA225F86F20022FA93 /* Build configuration list for PBXNativeTarget "UpLoadImageUITests" */;
+			buildPhases = (
+				AD8451E7225F86F20022FA93 /* Sources */,
+				AD8451E8225F86F20022FA93 /* Frameworks */,
+				AD8451E9225F86F20022FA93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD8451ED225F86F20022FA93 /* PBXTargetDependency */,
+			);
+			name = UpLoadImageUITests;
+			productName = UpLoadImageUITests;
+			productReference = AD8451EB225F86F20022FA93 /* UpLoadImageUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD8451C0225F86F00022FA93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "朱佳";
+				TargetAttributes = {
+					AD8451C7225F86F00022FA93 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					AD8451DF225F86F20022FA93 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AD8451C7225F86F00022FA93;
+					};
+					AD8451EA225F86F20022FA93 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AD8451C7225F86F00022FA93;
+					};
+				};
+			};
+			buildConfigurationList = AD8451C3225F86F00022FA93 /* Build configuration list for PBXProject "UpLoadImage" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD8451BF225F86F00022FA93;
+			productRefGroup = AD8451C9225F86F00022FA93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD8451C7225F86F00022FA93 /* UpLoadImage */,
+				AD8451DF225F86F20022FA93 /* UpLoadImageTests */,
+				AD8451EA225F86F20022FA93 /* UpLoadImageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD8451C6225F86F00022FA93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8451D8225F86F10022FA93 /* LaunchScreen.storyboard in Resources */,
+				AD8451D5225F86F10022FA93 /* Assets.xcassets in Resources */,
+				AD8451D3225F86F00022FA93 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8451DE225F86F20022FA93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8451E9225F86F20022FA93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B612E85F88D8DEE9E794A64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		40D37AB3E79CA69DCB12B104 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UpLoadImage/Pods-UpLoadImage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		688212D2B77C212476EE39EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UpLoadImage/Pods-UpLoadImage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD8451C4225F86F00022FA93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8451D0225F86F00022FA93 /* ViewController.m in Sources */,
+				AD8451DB225F86F10022FA93 /* main.m in Sources */,
+				AD8451CD225F86F00022FA93 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8451DC225F86F20022FA93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8451E5225F86F20022FA93 /* UpLoadImageTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8451E7225F86F20022FA93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8451F0225F86F20022FA93 /* UpLoadImageUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD8451E2225F86F20022FA93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD8451C7225F86F00022FA93 /* UpLoadImage */;
+			targetProxy = AD8451E1225F86F20022FA93 /* PBXContainerItemProxy */;
+		};
+		AD8451ED225F86F20022FA93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD8451C7225F86F00022FA93 /* UpLoadImage */;
+			targetProxy = AD8451EC225F86F20022FA93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD8451D1225F86F00022FA93 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD8451D2225F86F00022FA93 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD8451D6225F86F10022FA93 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD8451D7225F86F10022FA93 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD8451F2225F86F20022FA93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AD8451F3225F86F20022FA93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD8451F5225F86F20022FA93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15F733E1314C5C38B2F672A /* Pods-UpLoadImage.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QXAUED6B66;
+				INFOPLIST_FILE = UpLoadImage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Beth.com.UpLoadImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD8451F6225F86F20022FA93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA5B70BE3D4942A0F0586941 /* Pods-UpLoadImage.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QXAUED6B66;
+				INFOPLIST_FILE = UpLoadImage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Beth.com.UpLoadImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD8451F8225F86F20022FA93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QXAUED6B66;
+				INFOPLIST_FILE = UpLoadImageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Beth.com.UpLoadImageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UpLoadImage.app/UpLoadImage";
+			};
+			name = Debug;
+		};
+		AD8451F9225F86F20022FA93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QXAUED6B66;
+				INFOPLIST_FILE = UpLoadImageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Beth.com.UpLoadImageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UpLoadImage.app/UpLoadImage";
+			};
+			name = Release;
+		};
+		AD8451FB225F86F20022FA93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QXAUED6B66;
+				INFOPLIST_FILE = UpLoadImageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Beth.com.UpLoadImageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UpLoadImage;
+			};
+			name = Debug;
+		};
+		AD8451FC225F86F20022FA93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QXAUED6B66;
+				INFOPLIST_FILE = UpLoadImageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Beth.com.UpLoadImageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UpLoadImage;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD8451C3225F86F00022FA93 /* Build configuration list for PBXProject "UpLoadImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD8451F2225F86F20022FA93 /* Debug */,
+				AD8451F3225F86F20022FA93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD8451F4225F86F20022FA93 /* Build configuration list for PBXNativeTarget "UpLoadImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD8451F5225F86F20022FA93 /* Debug */,
+				AD8451F6225F86F20022FA93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD8451F7225F86F20022FA93 /* Build configuration list for PBXNativeTarget "UpLoadImageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD8451F8225F86F20022FA93 /* Debug */,
+				AD8451F9225F86F20022FA93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD8451FA225F86F20022FA93 /* Build configuration list for PBXNativeTarget "UpLoadImageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD8451FB225F86F20022FA93 /* Debug */,
+				AD8451FC225F86F20022FA93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD8451C0225F86F00022FA93 /* Project object */;
+}
