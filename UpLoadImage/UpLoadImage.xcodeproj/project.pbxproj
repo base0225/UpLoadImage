@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78722260CE2C0028BAF9 /* UIView+Position.m */; };
+		AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */; };
+		AD5C787A2260D6E90028BAF9 /* ZJPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78792260D6E90028BAF9 /* ZJPublicViewController.m */; };
 		AD8451CD225F86F00022FA93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451CC225F86F00022FA93 /* AppDelegate.m */; };
 		AD8451D0225F86F00022FA93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451CF225F86F00022FA93 /* ViewController.m */; };
 		AD8451D3225F86F00022FA93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8451D1225F86F00022FA93 /* Main.storyboard */; };
@@ -37,6 +40,12 @@
 
 /* Begin PBXFileReference section */
 		7641F7BEEC22DCD43BAF1A57 /* libPods-UpLoadImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpLoadImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5C78712260CE2C0028BAF9 /* UIView+Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
+		AD5C78722260CE2C0028BAF9 /* UIView+Position.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
+		AD5C78752260D3890028BAF9 /* ZJCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionViewCell.h; sourceTree = "<group>"; };
+		AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionViewCell.m; sourceTree = "<group>"; };
+		AD5C78782260D6E90028BAF9 /* ZJPublicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPublicViewController.h; sourceTree = "<group>"; };
+		AD5C78792260D6E90028BAF9 /* ZJPublicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPublicViewController.m; sourceTree = "<group>"; };
 		AD8451C8225F86F00022FA93 /* UpLoadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpLoadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8451CB225F86F00022FA93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AD8451CC225F86F00022FA93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,6 +109,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD5C78702260CCCA0028BAF9 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				AD5C78712260CE2C0028BAF9 /* UIView+Position.h */,
+				AD5C78722260CE2C0028BAF9 /* UIView+Position.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		AD5C78742260D3290028BAF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD5C78752260D3890028BAF9 /* ZJCollectionViewCell.h */,
+				AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AD8451BF225F86F00022FA93 = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +152,14 @@
 		AD8451CA225F86F00022FA93 /* UpLoadImage */ = {
 			isa = PBXGroup;
 			children = (
+				AD5C78742260D3290028BAF9 /* View */,
+				AD5C78702260CCCA0028BAF9 /* category */,
 				AD8451CB225F86F00022FA93 /* AppDelegate.h */,
 				AD8451CC225F86F00022FA93 /* AppDelegate.m */,
 				AD8451CE225F86F00022FA93 /* ViewController.h */,
 				AD8451CF225F86F00022FA93 /* ViewController.m */,
+				AD5C78782260D6E90028BAF9 /* ZJPublicViewController.h */,
+				AD5C78792260D6E90028BAF9 /* ZJPublicViewController.m */,
 				AD8451D1225F86F00022FA93 /* Main.storyboard */,
 				AD8451D4225F86F10022FA93 /* Assets.xcassets */,
 				AD8451D6225F86F10022FA93 /* LaunchScreen.storyboard */,
@@ -338,7 +369,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8451D0225F86F00022FA93 /* ViewController.m in Sources */,
+				AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */,
 				AD8451DB225F86F10022FA93 /* main.m in Sources */,
+				AD5C787A2260D6E90028BAF9 /* ZJPublicViewController.m in Sources */,
+				AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */,
 				AD8451CD225F86F00022FA93 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

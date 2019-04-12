@@ -14,13 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - PureLayout (3.0.2)
 
 DEPENDENCIES:
   - AFNetworking
+  - PureLayout
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
-PODFILE CHECKSUM: ce06c8713c5e74549d0f65054d6e42e72addb4c1
+PODFILE CHECKSUM: 4204665bf6ace35d351d08826f7ecdf31d474ed3
 
 COCOAPODS: 1.2.0
