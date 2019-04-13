@@ -24,6 +24,8 @@ static NSString *cellId = @"cellId";
 
 @property (nonatomic, strong) UIView *cancleView;
 
+@property (nonatomic, strong) UILabel *titleLabel;
+
 @end
 
 @implementation ZJPublicViewController
@@ -31,8 +33,12 @@ static NSString *cellId = @"cellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor clearColor];
+    
     [self.view addSubview:self.cancleView];
     [self.view addSubview:self.bgView];
+    [self.bgView addSubview:self.titleLabel];
+    [self.bgView addSubview:self.collectionView];
     
     [self.bgView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0.0f];
     [self.bgView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0.0f];
@@ -44,8 +50,14 @@ static NSString *cellId = @"cellId";
     [self.cancleView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:0.0f];
     [self.cancleView autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.bgView];
     
-//    [self.view addSubview:self.collectionView];
+    [self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:25.0f];
+    [self.titleLabel autoSetDimension:ALDimensionHeight toSize:20.0f];
+    [self.titleLabel autoAlignAxisToSuperviewAxis:ALAxisVertical];
     
+    [self.collectionView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.titleLabel withOffset:20.0f];
+    [self.collectionView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.collectionView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.collectionView autoSetDimension:ALDimensionHeight toSize:iconWidth *2  + itemLineSpace];
     
     
 }
@@ -53,7 +65,13 @@ static NSString *cellId = @"cellId";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *collectionCell = [[UICollectionViewCell alloc] init];
+    ZJCollectionViewCell *collectionCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+    if(indexPath.row == 0){
+        [collectionCell bindModel:[UIImage imageNamed:@"zj_image"] andText:@"照片"];
+    }else{
+        [collectionCell bindModel:[UIImage imageNamed:@"zj_vedio"] andText:@"视频"];
+    }
+    
     return collectionCell;
 }
 
@@ -64,13 +82,26 @@ static NSString *cellId = @"cellId";
 
 #pragma mark -- UIEvent
 - (void)hidePublishView{
-    
+    NSLog(@"点击了隐藏view");
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
 }
 
 #pragma mark -- UIView
+
+- (UILabel *)titleLabel{
+    if (!_titleLabel){
+        _titleLabel=[UILabel new];
+        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.text = @"记录我的旅行";
+        _titleLabel.font =  [UIFont fontWithName:@"HelveticaNeue" size:16];
+    }
+    return  _titleLabel;
+}
+
 - (UICollectionView *)collectionView{
     
-    if(_collectionView){
+    if(!_collectionView){
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.itemSize = CGSizeMake(iconWidth, iconWidth);
@@ -80,6 +111,7 @@ static NSString *cellId = @"cellId";
         flowLayout.sectionInset = UIEdgeInsetsMake(0, insetLeft, 0, insetLeft);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         [_collectionView registerClass:[ZJCollectionViewCell class] forCellWithReuseIdentifier:cellId];
@@ -93,7 +125,6 @@ static NSString *cellId = @"cellId";
         _cancleView=[UIView new];
         _cancleView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         [_cancleView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hidePublishView)]];
-        
     }
     return  _cancleView;
 }

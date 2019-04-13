@@ -40,6 +40,7 @@
 - (void)clickButton:(id)sender{
     NSLog(@"点击了button");
     ZJPublicViewController *publicViewController = [[ZJPublicViewController alloc] init];
+    publicViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
     [self.navigationController presentViewController:publicViewController animated:YES completion:^{
         
     }];
