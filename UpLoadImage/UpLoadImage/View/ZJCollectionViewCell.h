@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJCollectionViewCell : UICollectionViewCell
 
+- (void)bindModel:(UIImage *)image andText:(NSString *)text;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0C19132261D58C00E3F0AB /* ZJCollectionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */; };
 		AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78722260CE2C0028BAF9 /* UIView+Position.m */; };
 		AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */; };
 		AD5C787A2260D6E90028BAF9 /* ZJPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78792260D6E90028BAF9 /* ZJPublicViewController.m */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		7641F7BEEC22DCD43BAF1A57 /* libPods-UpLoadImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpLoadImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD0C19112261D58C00E3F0AB /* ZJCollectionCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionCellModel.h; sourceTree = "<group>"; };
+		AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionCellModel.m; sourceTree = "<group>"; };
 		AD5C78712260CE2C0028BAF9 /* UIView+Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
 		AD5C78722260CE2C0028BAF9 /* UIView+Position.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
 		AD5C78752260D3890028BAF9 /* ZJCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionViewCell.h; sourceTree = "<group>"; };
@@ -109,6 +112,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD0C19102261CFDD00E3F0AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD0C19112261D58C00E3F0AB /* ZJCollectionCellModel.h */,
+				AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AD5C78702260CCCA0028BAF9 /* category */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 		AD8451CA225F86F00022FA93 /* UpLoadImage */ = {
 			isa = PBXGroup;
 			children = (
+				AD0C19102261CFDD00E3F0AB /* Model */,
 				AD5C78742260D3290028BAF9 /* View */,
 				AD5C78702260CCCA0028BAF9 /* category */,
 				AD8451CB225F86F00022FA93 /* AppDelegate.h */,
@@ -368,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0C19132261D58C00E3F0AB /* ZJCollectionCellModel.m in Sources */,
 				AD8451D0225F86F00022FA93 /* ViewController.m in Sources */,
 				AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */,
 				AD8451DB225F86F10022FA93 /* main.m in Sources */,
