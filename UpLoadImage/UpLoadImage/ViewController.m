@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ZJPublicViewController.h"
 
+
 @interface ViewController ()
 
 @property (nonatomic, strong) UIView *bgView;
@@ -38,8 +39,7 @@
     NSLog(@"点击了button");
     ZJPublicViewController *publicViewController = [[ZJPublicViewController alloc] init];
     publicViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    [self.navigationController presentViewController:publicViewController animated:YES completion:^{
-        
+    [self presentViewController:publicViewController animated:YES completion:^{
     }];
 }
 

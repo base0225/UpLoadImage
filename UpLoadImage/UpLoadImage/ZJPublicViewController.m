@@ -87,7 +87,6 @@ static NSString *cellId = @"cellId";
         NSLog(@"点击了照片");
         [self presentViewController:postViewController animated:YES completion:^{
         }];
-       
     }else if(indexPath.row == 1){
         NSLog(@"点击了视频");
     }else{
