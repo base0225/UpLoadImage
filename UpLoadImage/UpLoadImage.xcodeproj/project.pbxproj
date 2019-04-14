@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD0C19132261D58C00E3F0AB /* ZJCollectionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */; };
+		AD48D6B82262D2F60007BDA8 /* ZJPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD48D6B72262D2F60007BDA8 /* ZJPostViewController.m */; };
 		AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78722260CE2C0028BAF9 /* UIView+Position.m */; };
 		AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */; };
 		AD5C787A2260D6E90028BAF9 /* ZJPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78792260D6E90028BAF9 /* ZJPublicViewController.m */; };
@@ -43,6 +44,9 @@
 		7641F7BEEC22DCD43BAF1A57 /* libPods-UpLoadImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpLoadImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0C19112261D58C00E3F0AB /* ZJCollectionCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionCellModel.h; sourceTree = "<group>"; };
 		AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionCellModel.m; sourceTree = "<group>"; };
+		AD48D6B62262D2F60007BDA8 /* ZJPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPostViewController.h; sourceTree = "<group>"; };
+		AD48D6B72262D2F60007BDA8 /* ZJPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPostViewController.m; sourceTree = "<group>"; };
+		AD48D6BA2262D6120007BDA8 /* UpLoadImage.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpLoadImage.pch; sourceTree = "<group>"; };
 		AD5C78712260CE2C0028BAF9 /* UIView+Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
 		AD5C78722260CE2C0028BAF9 /* UIView+Position.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
 		AD5C78752260D3890028BAF9 /* ZJCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionViewCell.h; sourceTree = "<group>"; };
@@ -121,6 +125,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AD48D6B92262D5B00007BDA8 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				AD48D6BA2262D6120007BDA8 /* UpLoadImage.pch */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
 		AD5C78702260CCCA0028BAF9 /* category */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +176,7 @@
 		AD8451CA225F86F00022FA93 /* UpLoadImage */ = {
 			isa = PBXGroup;
 			children = (
+				AD48D6B92262D5B00007BDA8 /* other */,
 				AD0C19102261CFDD00E3F0AB /* Model */,
 				AD5C78742260D3290028BAF9 /* View */,
 				AD5C78702260CCCA0028BAF9 /* category */,
@@ -173,6 +186,8 @@
 				AD8451CF225F86F00022FA93 /* ViewController.m */,
 				AD5C78782260D6E90028BAF9 /* ZJPublicViewController.h */,
 				AD5C78792260D6E90028BAF9 /* ZJPublicViewController.m */,
+				AD48D6B62262D2F60007BDA8 /* ZJPostViewController.h */,
+				AD48D6B72262D2F60007BDA8 /* ZJPostViewController.m */,
 				AD8451D1225F86F00022FA93 /* Main.storyboard */,
 				AD8451D4225F86F10022FA93 /* Assets.xcassets */,
 				AD8451D6225F86F10022FA93 /* LaunchScreen.storyboard */,
@@ -383,6 +398,7 @@
 			files = (
 				AD0C19132261D58C00E3F0AB /* ZJCollectionCellModel.m in Sources */,
 				AD8451D0225F86F00022FA93 /* ViewController.m in Sources */,
+				AD48D6B82262D2F60007BDA8 /* ZJPostViewController.m in Sources */,
 				AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */,
 				AD8451DB225F86F10022FA93 /* main.m in Sources */,
 				AD5C787A2260D6E90028BAF9 /* ZJPublicViewController.m in Sources */,
@@ -561,6 +577,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QXAUED6B66;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UpLoadImage/other/UpLoadImage.pch;
 				INFOPLIST_FILE = UpLoadImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,6 +597,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QXAUED6B66;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UpLoadImage/other/UpLoadImage.pch;
 				INFOPLIST_FILE = UpLoadImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

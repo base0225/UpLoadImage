@@ -8,8 +8,7 @@
 
 #import "ZJPublicViewController.h"
 #import "ZJCollectionViewCell.h"
-#import "UIView+Position.h"
-#import "PureLayout.h"
+#import "ZJPostViewController.h"
 
 const static CGFloat iconWidth = 130;
 const static CGFloat itemLineSpace = 10;
@@ -71,7 +70,6 @@ static NSString *cellId = @"cellId";
     }else{
         [collectionCell bindModel:[UIImage imageNamed:@"zj_vedio"] andText:@"视频"];
     }
-    
     return collectionCell;
 }
 
@@ -79,6 +77,24 @@ static NSString *cellId = @"cellId";
 {
     return 2;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if(indexPath.row == 0){
+        ZJPostViewController *postViewController = [[ZJPostViewController alloc] init];
+        postViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        NSLog(@"点击了照片");
+        [self presentViewController:postViewController animated:YES completion:^{
+        }];
+       
+    }else if(indexPath.row == 1){
+        NSLog(@"点击了视频");
+    }else{
+        NSLog(@"好像出问题了吧~");
+    }
+}
+
 
 #pragma mark -- UIEvent
 - (void)hidePublishView{

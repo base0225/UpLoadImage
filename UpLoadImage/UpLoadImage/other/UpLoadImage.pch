@@ -1,0 +1,15 @@
+//
+//  UpLoadImage.pch
+//  UpLoadImage
+//
+//  Created by 朱佳 on 2019/4/14.
+//  Copyright © 2019 朱佳. All rights reserved.
+//
+
+#ifndef UpLoadImage_pch
+#define UpLoadImage_pch
+
+#import "UIView+Position.h"
+#import "PureLayout.h"
+
+#endif /* UpLoadImage_pch */
