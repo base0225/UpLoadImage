@@ -7,10 +7,13 @@
 //
 
 #import "ZJPostViewController.h"
+#import "ZJDynamicImageCell.h"
 
-@interface ZJPostViewController ()
+@interface ZJPostViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UIView *topBarView;
+
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
@@ -27,21 +30,20 @@
     [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:[[UIApplication sharedApplication] statusBarFrame].size.height];
     [self.topBarView autoSetDimension:ALDimensionHeight toSize:44.0f];
     
-    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancelButton.backgroundColor = [UIColor redColor];
-    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-    [cancelButton addTarget:self action:@selector(dismissViewController:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:cancelButton];
+    [self.view addSubview:self.collectionView];
     
-    [cancelButton autoAlignAxisToSuperviewAxis:ALAxisVertical];
-    [cancelButton autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    [cancelButton autoSetDimensionsToSize:CGSizeMake(50, 30)];
+    [self.collectionView autoPinEdgesToSuperviewEdges];
     
 }
 
-- (void)setUpTopBar{
-    
+
+
+#pragma mark -- UI Event
+
+- (void)saveImage:(id)sender{
+    NSLog(@"上传接口");
 }
+
 
 - (void)dismissViewController:(id)sender{
     [self dismissViewControllerAnimated:YES completion:^{
@@ -70,12 +72,45 @@
         
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [rightButton setTitle:@"上传" forState:UIControlStateNormal];
-        [rightButton addTarget:self action:@selector(savImage:) forControlEvents:UIControlEventTouchUpInside];
+        [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [rightButton addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
         [_topBarView addSubview:rightButton];
+        [rightButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20.0f];
+        [rightButton autoSetDimensionsToSize:CGSizeMake(50, 40)];
+        [rightButton autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         
     }
     return _topBarView;
 }
 
+#pragma mark -- collectionView DataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+   UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageCell" forIndexPath:indexPath];
+    return cell;
+}
+
+
+#pragma mark -- UI
+- (UICollectionView *)collectionView{
+    if(!_collectionView){
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.minimumLineSpacing = 0;
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.backgroundColor = [UIColor redColor];
+        _collectionView.alwaysBounceVertical = true;
+        _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        _collectionView.backgroundColor = [UIColor whiteColor];
+        [_collectionView registerClass:NSClassFromString(@"ZJDynamicImageCell") forCellWithReuseIdentifier:@"ZJDynamicImageCell"];
+    }
+    return _collectionView;
+}
 
 @end
