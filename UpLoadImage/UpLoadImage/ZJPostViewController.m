@@ -9,6 +9,8 @@
 #import "ZJPostViewController.h"
 #import "ZJDynamicImageCell.h"
 
+static const CGFloat collectionViewInsetTop = 130;
+
 @interface ZJPostViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UIView *topBarView;
@@ -32,7 +34,7 @@
     
     [self.view addSubview:self.collectionView];
     
-    [self.collectionView autoPinEdgesToSuperviewEdges];
+    [self.collectionView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(collectionViewInsetTop, 10, 0, 10)];
     
 }
 
@@ -91,8 +93,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageCell" forIndexPath:indexPath];
-    return cell;
+   ZJDynamicImageCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageCell" forIndexPath:indexPath];
+    
+   return cell;
 }
 
 
@@ -100,7 +103,8 @@
 - (UICollectionView *)collectionView{
     if(!_collectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.minimumLineSpacing = 0;
+        layout.itemSize = CGSizeMake(100, 100);
+        layout.minimumInteritemSpacing = 10;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
