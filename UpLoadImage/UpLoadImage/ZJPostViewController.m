@@ -92,7 +92,6 @@ static const CGFloat collectionViewInsetTop = 130;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     UICollectionViewCell *cell = nil;
     if(indexPath.row == 0){
         ZJDynamicImageAddCell *addimageCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageAddCell" forIndexPath:indexPath];
