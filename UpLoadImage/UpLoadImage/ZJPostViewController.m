@@ -8,6 +8,7 @@
 
 #import "ZJPostViewController.h"
 #import "ZJDynamicImageCell.h"
+#import "ZJDynamicImageAddCell.h"
 
 static const CGFloat collectionViewInsetTop = 130;
 
@@ -37,8 +38,6 @@ static const CGFloat collectionViewInsetTop = 130;
     [self.collectionView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(collectionViewInsetTop, 10, 0, 10)];
     
 }
-
-
 
 #pragma mark -- UI Event
 
@@ -93,7 +92,17 @@ static const CGFloat collectionViewInsetTop = 130;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   ZJDynamicImageCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageCell" forIndexPath:indexPath];
+    UICollectionViewCell *cell = nil;
+    if(indexPath.row == 0){
+        ZJDynamicImageAddCell *addimageCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageAddCell" forIndexPath:indexPath];
+        [addimageCell bindmodelwithstr:@"最多添加20张"];
+        cell = addimageCell;
+    }else
+    {
+        ZJDynamicImageCell *imageCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageCell" forIndexPath:indexPath];
+        cell = imageCell;
+    }
+   
     
    return cell;
 }
@@ -113,6 +122,7 @@ static const CGFloat collectionViewInsetTop = 130;
         _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         _collectionView.backgroundColor = [UIColor whiteColor];
         [_collectionView registerClass:NSClassFromString(@"ZJDynamicImageCell") forCellWithReuseIdentifier:@"ZJDynamicImageCell"];
+        [_collectionView registerClass:NSClassFromString(@"ZJDynamicImageAddCell") forCellWithReuseIdentifier:@"ZJDynamicImageAddCell"];
     }
     return _collectionView;
 }
