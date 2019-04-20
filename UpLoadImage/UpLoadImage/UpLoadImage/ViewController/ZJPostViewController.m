@@ -9,6 +9,7 @@
 #import "ZJPostViewController.h"
 #import "ZJDynamicImageCell.h"
 #import "ZJDynamicImageAddCell.h"
+#import "ZJAlbumViewController.h"
 
 static const CGFloat collectionViewInsetTop = 130;
 
@@ -52,6 +53,48 @@ static const CGFloat collectionViewInsetTop = 130;
     }];
 }
 
+
+#pragma mark -- collectionView DataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = nil;
+    if(indexPath.row == 0){
+        ZJDynamicImageAddCell *addimageCell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageAddCell" forIndexPath:indexPath];
+        [addimageCell bindmodelwithstr:@"最多添加20张"];
+        cell = addimageCell;
+    }else
+    {
+        ZJDynamicImageCell *imageCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageCell" forIndexPath:indexPath];
+        cell = imageCell;
+    }
+   
+    
+   return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 0){
+        NSLog(@"添加照片");
+        [self addImage];
+    }else{
+        NSLog(@"展示大图");
+    }
+}
+
+#pragma mark -- UIEvent
+- (void)addImage{
+    ZJAlbumViewController *ablumiewController = [[ZJAlbumViewController alloc] init];
+    [self presentViewController:ablumiewController animated:YES completion:^{
+        
+    }];
+}
+
+
 #pragma mark -- UI
 - (UIView *)topBarView{
     if(!_topBarView){
@@ -85,39 +128,6 @@ static const CGFloat collectionViewInsetTop = 130;
     return _topBarView;
 }
 
-#pragma mark -- collectionView DataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return 10;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell = nil;
-    if(indexPath.row == 0){
-        ZJDynamicImageAddCell *addimageCell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageAddCell" forIndexPath:indexPath];
-        [addimageCell bindmodelwithstr:@"最多添加20张"];
-        cell = addimageCell;
-    }else
-    {
-        ZJDynamicImageCell *imageCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageCell" forIndexPath:indexPath];
-        cell = imageCell;
-    }
-   
-    
-   return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row == 0){
-        NSLog(@"添加照片");
-    }else{
-        NSLog(@"展示大图");
-    }
-}
-
-
-#pragma mark -- UI
 - (UICollectionView *)collectionView{
     if(!_collectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
