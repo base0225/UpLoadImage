@@ -10,4 +10,22 @@
 
 @implementation ZJDynamicImageCell
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if(self = [super initWithFrame:frame]){
+        [self constructView];
+    }
+    return self;
+}
+
+
+- (void)constructView{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setBackgroundColor:[UIColor redColor]];
+    [self.contentView addSubview:button];
+    
+    [button autoPinEdgesToSuperviewEdges];
+    
+}
+
+
 @end

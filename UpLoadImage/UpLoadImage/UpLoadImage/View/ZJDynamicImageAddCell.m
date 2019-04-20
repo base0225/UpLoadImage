@@ -29,9 +29,9 @@
         [self.addIcomImageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:25.0f];
         [self.addIcomImageView autoSetDimensionsToSize:self.addIcomImageView.image.size];
         
-        [self.addLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.addIcomImageView withOffset:6];
-        [self.addLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:8.0];
-        [self.addLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:8.0];
+        [self.addLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.addIcomImageView withOffset:10];
+        [self.addLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:2.0];
+        [self.addLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:2.0];
     }
     return self;
 }
@@ -56,6 +56,7 @@
         _addLabel = [[UILabel alloc] init];
         _addLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
         _addLabel.text = @"添加照片";
+        _addLabel.textAlignment = NSTextAlignmentCenter;
         _addLabel.numberOfLines = 0;
     }
     return _addLabel;
