@@ -238,10 +238,10 @@
 				ADAEA28E226AF4E000EE1D8C /* ZJPublicViewController.m */,
 				ADAEA28F226AF4E000EE1D8C /* ZJPostViewController.h */,
 				ADAEA290226AF4E000EE1D8C /* ZJAssetGridViewController.m */,
-				ADAEA291226AF4E000EE1D8C /* ZJAlbumViewController.h */,
 				ADAEA292226AF4E000EE1D8C /* ZJPostViewController.m */,
 				ADAEA293226AF4E000EE1D8C /* ZJPublicViewController.h */,
 				ADAEA294226AF4E000EE1D8C /* ZJAssetGridViewController.h */,
+				ADAEA291226AF4E000EE1D8C /* ZJAlbumViewController.h */,
 				ADAEA295226AF4E000EE1D8C /* ZJAlbumViewController.m */,
 			);
 			path = ViewController;

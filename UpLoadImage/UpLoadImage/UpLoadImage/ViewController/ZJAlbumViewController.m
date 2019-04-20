@@ -7,10 +7,15 @@
 //
 
 #import "ZJAlbumViewController.h"
+#import "ZJPHAssertManger.h"
 
 @interface ZJAlbumViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UIView *topBarView;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UILabel *tipsLabel;
+
+//data
+@property (nonatomic, strong)  NSMutableArray *albumArray;
 @end
 
 @implementation ZJAlbumViewController
@@ -28,6 +33,8 @@
     [self.topBarView autoSetDimension:ALDimensionHeight toSize:44.0f];
     
     [self initpage];
+    
+    [self checkAuthorization];
 }
 
 - (void)initpage{
@@ -37,7 +44,46 @@
     [self.tableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [self.tableView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
     [self.tableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topBarView];
+    
+    [self.view addSubview:self.tipsLabel];
+    [self.tipsLabel autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [self.tipsLabel autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
 
+}
+
+- (void)checkAuthorization{
+    if([ZJPHAssertManger authorizationStatus] == ZJAssetAuthorizationStatusNotDetermined){
+        
+        NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
+        NSString *appName = [dic objectForKey:@"CFBundleDisplayName"];
+        if(!appName){
+            appName = [dic objectForKey:(NSString *)kCFBundleNameKey];
+        }
+        NSString *tips = [NSString stringWithFormat:@"请在设备的\"设置-隐私-照片\"选项中，允许%@访问你的手机相册",appName];
+        self.tipsLabel.hidden = NO;
+        self.tipsLabel.text = tips;
+    }else{
+        [ZJPHAssertManger requestAuthorization:^(ZJAssetAuthorizationStatus stauts) {
+            if(stauts != ZJAssetAuthorizationStatusNotAuthorized){
+                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self initDatasource];
+                });
+            }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self checkAuthorization];
+                });
+            }
+        }];
+    }
+}
+
+- (void)initDatasource{
+    self.albumArray = [NSMutableArray array];
+    
+    //加载图片
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+    });
 }
 
 
@@ -112,6 +158,19 @@
         
     }
     return _topBarView;
+}
+
+- (UILabel *)tipsLabel {
+    
+    if (!_tipsLabel) {
+        _tipsLabel = [[UILabel alloc] init];
+        _tipsLabel.hidden = YES;
+        _tipsLabel.font = [UIFont systemFontOfSize:16.0f];
+        _tipsLabel.textColor = [UIColor blackColor];
+        _tipsLabel.textAlignment = NSTextAlignmentCenter;
+        _tipsLabel.numberOfLines = 0;
+    }
+    return _tipsLabel;
 }
 
 @end

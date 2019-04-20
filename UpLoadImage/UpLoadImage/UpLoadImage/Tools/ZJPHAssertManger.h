@@ -8,9 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef NS_ENUM(NSInteger, ZJAssetAuthorizationStatus) {
+    ZJAssetAuthorizationStatusNotDetermined,
+    ZJAssetAuthorizationStatusAuthorized,
+    ZJAssetAuthorizationStatusNotAuthorized
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJPHAssertManger : NSObject
+
++ (ZJAssetAuthorizationStatus)authorizationStatus;
+
++ (void)requestAuthorization:(void(^)(ZJAssetAuthorizationStatus stauts))handler;
 
 @end
 
