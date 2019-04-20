@@ -8,6 +8,12 @@
 
 #import "ZJDynamicImageCell.h"
 
+@interface ZJDynamicImageCell ()
+
+@property (nonatomic, strong) UIImageView *zjImageView;
+
+@end
+
 @implementation ZJDynamicImageCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -19,11 +25,11 @@
 
 
 - (void)constructView{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setBackgroundColor:[UIColor redColor]];
-    [self.contentView addSubview:button];
+    self.zjImageView = [[UIImageView alloc] initWithImage:nil];
+    self.zjImageView.backgroundColor = [UIColor redColor];
+    [self.contentView addSubview:self.zjImageView];
     
-    [button autoPinEdgesToSuperviewEdges];
+    [self.zjImageView autoPinEdgesToSuperviewEdges];
     
 }
 

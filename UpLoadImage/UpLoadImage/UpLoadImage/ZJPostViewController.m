@@ -27,6 +27,7 @@ static const CGFloat collectionViewInsetTop = 130;
 
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
     [self.view addSubview:self.topBarView];
     [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeRight];
@@ -94,7 +95,7 @@ static const CGFloat collectionViewInsetTop = 130;
 {
     UICollectionViewCell *cell = nil;
     if(indexPath.row == 0){
-        ZJDynamicImageAddCell *addimageCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageAddCell" forIndexPath:indexPath];
+        ZJDynamicImageAddCell *addimageCell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageAddCell" forIndexPath:indexPath];
         [addimageCell bindmodelwithstr:@"最多添加20张"];
         cell = addimageCell;
     }else
@@ -125,10 +126,9 @@ static const CGFloat collectionViewInsetTop = 130;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.backgroundColor = [UIColor redColor];
+        _collectionView.backgroundColor = [UIColor grayColor];
         _collectionView.alwaysBounceVertical = true;
         _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-        _collectionView.backgroundColor = [UIColor whiteColor];
         [_collectionView registerClass:NSClassFromString(@"ZJDynamicImageCell") forCellWithReuseIdentifier:@"ZJDynamicImageCell"];
         [_collectionView registerClass:NSClassFromString(@"ZJDynamicImageAddCell") forCellWithReuseIdentifier:@"ZJDynamicImageAddCell"];
     }
