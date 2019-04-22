@@ -48,6 +48,8 @@
     [self.view addSubview:self.tipsLabel];
     [self.tipsLabel autoAlignAxisToSuperviewAxis:ALAxisVertical];
     [self.tipsLabel autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    [self.tipsLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:50.0f];
+    [self.tipsLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:50.0f];
 
 }
 
@@ -64,9 +66,12 @@
         self.tipsLabel.text = tips;
     }else{
         [ZJPHAssertManger requestAuthorization:^(ZJAssetAuthorizationStatus stauts) {
+
+            NSLog(@"%@",[NSThread mainThread]);
+            
             if(stauts != ZJAssetAuthorizationStatusNotAuthorized){
                 dispatch_async(dispatch_get_main_queue(), ^{
-//                    [self initDatasource];
+                    [self initDatasource];
                 });
             }else{
                 dispatch_async(dispatch_get_main_queue(), ^{
