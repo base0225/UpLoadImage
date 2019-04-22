@@ -8,6 +8,7 @@
 
 #import "ZJAlbumViewController.h"
 #import "ZJPHAssertManger.h"
+#import "ZJAssertCollection.h"
 
 @interface ZJAlbumViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UIView *topBarView;
@@ -54,17 +55,17 @@
 }
 
 - (void)checkAuthorization{
-    if([ZJPHAssertManger authorizationStatus] == ZJAssetAuthorizationStatusNotDetermined){
-        
-        NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
-        NSString *appName = [dic objectForKey:@"CFBundleDisplayName"];
-        if(!appName){
-            appName = [dic objectForKey:(NSString *)kCFBundleNameKey];
-        }
-        NSString *tips = [NSString stringWithFormat:@"请在设备的\"设置-隐私-照片\"选项中，允许%@访问你的手机相册",appName];
-        self.tipsLabel.hidden = NO;
-        self.tipsLabel.text = tips;
-    }else{
+//    if([ZJPHAssertManger authorizationStatus] == ZJAssetAuthorizationStatusNotDetermined){
+//
+//        NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
+//        NSString *appName = [dic objectForKey:@"CFBundleDisplayName"];
+//        if(!appName){
+//            appName = [dic objectForKey:(NSString *)kCFBundleNameKey];
+//        }
+//        NSString *tips = [NSString stringWithFormat:@"请在设备的\"设置-隐私-照片\"选项中，允许%@访问你的手机相册",appName];
+//        self.tipsLabel.hidden = NO;
+//        self.tipsLabel.text = tips;
+//    }else{
         [ZJPHAssertManger requestAuthorization:^(ZJAssetAuthorizationStatus stauts) {
 
             NSLog(@"%@",[NSThread mainThread]);
@@ -79,7 +80,7 @@
                 });
             }
         }];
-    }
+//    }
 }
 
 - (void)initDatasource{
@@ -87,8 +88,26 @@
     
     //加载图片
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
+        __weak __typeof(self)weakSelf = self;
+        [[ZJPHAssertManger shareInstance] enumberateAllAlbumsWithType:1 showEmptyAlbum:NO showSmartAlbum:YES block:^(ZJAssertCollection * resultCollection) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if(resultCollection){
+                    [weakSelf.albumArray addObject:resultCollection];
+                }else{
+                    [weakSelf refreshAlbumOrShowEmptyView];
+                }
+            });
+        }];
     });
+}
+
+- (void)refreshAlbumOrShowEmptyView{
+    if(self.albumArray.count>0){
+        [self.tableView reloadData];
+    }else{
+        self.tipsLabel.hidden = NO;
+        self.tipsLabel.text = @"暂无照片";
+    }
 }
 
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class ZJAssertCollection;
 
 typedef NS_ENUM(NSInteger, ZJAssetAuthorizationStatus) {
     ZJAssetAuthorizationStatusNotDetermined,
@@ -19,9 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJPHAssertManger : NSObject
 
++ (instancetype)shareInstance;
+
 + (ZJAssetAuthorizationStatus)authorizationStatus;
 
 + (void)requestAuthorization:(void(^)(ZJAssetAuthorizationStatus stauts))handler;
+
+- (void)enumberateAllAlbumsWithType:(NSInteger)type showEmptyAlbum:(BOOL)showEmptyAlbum showSmartAlbum:(BOOL)showSmartAlbum block:(void(^)(ZJAssertCollection *))block;
 
 @end
 
