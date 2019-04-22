@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UpLoadImage/ViewController/ZJAlbumViewController.m"
+            timestampString = "577635063.951949"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-checkAuthorization"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZJAlbumViewController checkAuthorization]"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635063.974228"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[ZJAlbumViewController checkAuthorization]_block_invoke"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635063.977551"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UpLoadImage/ViewController/ZJAlbumViewController.m"
+            timestampString = "577635063.9520169"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-checkAuthorization"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[ZJAlbumViewController checkAuthorization]_block_invoke"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635063.984596"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[ZJAlbumViewController checkAuthorization]_block_invoke_2"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635063.986797"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_e8_32s"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635063.9910001"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UpLoadImage/ViewController/ZJAlbumViewController.m"
+            timestampString = "577635063.952067"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-checkAuthorization"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[ZJAlbumViewController checkAuthorization]_block_invoke"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635063.998651"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[ZJAlbumViewController checkAuthorization]_block_invoke.43"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635064.001426"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UpLoadImage/ViewController/ZJAlbumViewController.m"
+            timestampString = "577635083.997546"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-checkAuthorization"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UpLoadImage/ViewController/ZJAlbumViewController.m"
+            timestampString = "577635087.239506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-initDatasource"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[ZJAlbumViewController initDatasource]_block_invoke_2"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635087.246581"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[ZJAlbumViewController initDatasource]_block_invoke_3"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635087.248504"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_e8_32s40w"
+                  moduleName = "UpLoadImage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhujia/Documents/GitHub/UpLoadImage/UpLoadImage/UpLoadImage/UpLoadImage/ViewController/ZJAlbumViewController.m"
+                  timestampString = "577635087.250988"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UpLoadImage/ViewController/ZJAlbumViewController.m"
+            timestampString = "577635103.1120811"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-initDatasource"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UpLoadImage/ViewController/ZJAlbumViewController.m"
+            timestampString = "577635117.694404"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-initDatasource"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
