@@ -11,6 +11,9 @@
 		AD223FD92267260700208411 /* ZJDynamicImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD223FD82267260700208411 /* ZJDynamicImageCell.m */; };
 		AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78722260CE2C0028BAF9 /* UIView+Position.m */; };
 		AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */; };
+		AD63E208226DADC2002A2F06 /* ZJAssertCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AD63E207226DADC2002A2F06 /* ZJAssertCollection.m */; };
+		AD63E20C226DC093002A2F06 /* ZJAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = AD63E20B226DC093002A2F06 /* ZJAssets.m */; };
+		AD63E20F226DD26D002A2F06 /* ZJAssets+ZJAssetsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD63E20E226DD26C002A2F06 /* ZJAssets+ZJAssetsCategory.m */; };
 		AD7BD1E02268C32E00F74BF7 /* ZJDynamicImageAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7BD1DF2268C32E00F74BF7 /* ZJDynamicImageAddCell.m */; };
 		AD8451CD225F86F00022FA93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451CC225F86F00022FA93 /* AppDelegate.m */; };
 		AD8451D0225F86F00022FA93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8451CF225F86F00022FA93 /* ViewController.m */; };
@@ -56,6 +59,12 @@
 		AD5C78722260CE2C0028BAF9 /* UIView+Position.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
 		AD5C78752260D3890028BAF9 /* ZJCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCollectionViewCell.h; sourceTree = "<group>"; };
 		AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionViewCell.m; sourceTree = "<group>"; };
+		AD63E206226DADC2002A2F06 /* ZJAssertCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAssertCollection.h; sourceTree = "<group>"; };
+		AD63E207226DADC2002A2F06 /* ZJAssertCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAssertCollection.m; sourceTree = "<group>"; };
+		AD63E20A226DC093002A2F06 /* ZJAssets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAssets.h; sourceTree = "<group>"; };
+		AD63E20B226DC093002A2F06 /* ZJAssets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAssets.m; sourceTree = "<group>"; };
+		AD63E20D226DD26C002A2F06 /* ZJAssets+ZJAssetsCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZJAssets+ZJAssetsCategory.h"; sourceTree = "<group>"; };
+		AD63E20E226DD26C002A2F06 /* ZJAssets+ZJAssetsCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZJAssets+ZJAssetsCategory.m"; sourceTree = "<group>"; };
 		AD7BD1DE2268C32E00F74BF7 /* ZJDynamicImageAddCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJDynamicImageAddCell.h; sourceTree = "<group>"; };
 		AD7BD1DF2268C32E00F74BF7 /* ZJDynamicImageAddCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJDynamicImageAddCell.m; sourceTree = "<group>"; };
 		AD8451C8225F86F00022FA93 /* UpLoadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpLoadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +145,8 @@
 			children = (
 				AD0C19112261D58C00E3F0AB /* ZJCollectionCellModel.h */,
 				AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */,
+				AD63E206226DADC2002A2F06 /* ZJAssertCollection.h */,
+				AD63E207226DADC2002A2F06 /* ZJAssertCollection.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +181,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AD63E209226DBB62002A2F06 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AD63E20D226DD26C002A2F06 /* ZJAssets+ZJAssetsCategory.h */,
+				AD63E20E226DD26C002A2F06 /* ZJAssets+ZJAssetsCategory.m */,
+			);
+			name = Category;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		AD8451BF225F86F00022FA93 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +216,7 @@
 		AD8451CA225F86F00022FA93 /* UpLoadImage */ = {
 			isa = PBXGroup;
 			children = (
+				AD63E209226DBB62002A2F06 /* Category */,
 				ADAEA29C226AF52300EE1D8C /* Tools */,
 				ADAEA28D226AF4E000EE1D8C /* ViewController */,
 				AD48D6B92262D5B00007BDA8 /* other */,
@@ -235,12 +257,12 @@
 		ADAEA28D226AF4E000EE1D8C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				ADAEA28E226AF4E000EE1D8C /* ZJPublicViewController.m */,
 				ADAEA28F226AF4E000EE1D8C /* ZJPostViewController.h */,
-				ADAEA290226AF4E000EE1D8C /* ZJAssetGridViewController.m */,
 				ADAEA292226AF4E000EE1D8C /* ZJPostViewController.m */,
 				ADAEA293226AF4E000EE1D8C /* ZJPublicViewController.h */,
+				ADAEA28E226AF4E000EE1D8C /* ZJPublicViewController.m */,
 				ADAEA294226AF4E000EE1D8C /* ZJAssetGridViewController.h */,
+				ADAEA290226AF4E000EE1D8C /* ZJAssetGridViewController.m */,
 				ADAEA291226AF4E000EE1D8C /* ZJAlbumViewController.h */,
 				ADAEA295226AF4E000EE1D8C /* ZJAlbumViewController.m */,
 			);
@@ -252,6 +274,8 @@
 			children = (
 				ADAEA29D226AF52300EE1D8C /* ZJPHAssertManger.h */,
 				ADAEA29E226AF52300EE1D8C /* ZJPHAssertManger.m */,
+				AD63E20A226DC093002A2F06 /* ZJAssets.h */,
+				AD63E20B226DC093002A2F06 /* ZJAssets.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -438,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD0C19132261D58C00E3F0AB /* ZJCollectionCellModel.m in Sources */,
+				AD63E208226DADC2002A2F06 /* ZJAssertCollection.m in Sources */,
 				AD8451D0225F86F00022FA93 /* ViewController.m in Sources */,
 				AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */,
 				ADAEA299226AF4E000EE1D8C /* ZJAlbumViewController.m in Sources */,
@@ -446,8 +471,10 @@
 				AD223FD92267260700208411 /* ZJDynamicImageCell.m in Sources */,
 				ADAEA297226AF4E000EE1D8C /* ZJAssetGridViewController.m in Sources */,
 				ADAEA298226AF4E000EE1D8C /* ZJPostViewController.m in Sources */,
+				AD63E20C226DC093002A2F06 /* ZJAssets.m in Sources */,
 				AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */,
 				ADAEA296226AF4E000EE1D8C /* ZJPublicViewController.m in Sources */,
+				AD63E20F226DD26D002A2F06 /* ZJAssets+ZJAssetsCategory.m in Sources */,
 				AD8451CD225F86F00022FA93 /* AppDelegate.m in Sources */,
 				ADAEA29F226AF52300EE1D8C /* ZJPHAssertManger.m in Sources */,
 			);
