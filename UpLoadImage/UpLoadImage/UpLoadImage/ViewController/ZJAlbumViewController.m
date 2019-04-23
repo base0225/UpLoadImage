@@ -9,6 +9,7 @@
 #import "ZJAlbumViewController.h"
 #import "ZJPHAssertManger.h"
 #import "ZJAssertCollection.h"
+#import "ZJAlbumTableViewCell.h"
 
 @interface ZJAlbumViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UIView *topBarView;
@@ -67,11 +68,10 @@
 //        self.tipsLabel.text = tips;
 //    }else{
         [ZJPHAssertManger requestAuthorization:^(ZJAssetAuthorizationStatus stauts) {
-
             NSLog(@"%@",[NSThread mainThread]);
-            
             if(stauts != ZJAssetAuthorizationStatusNotAuthorized){
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    NSLog(@"%@",[NSThread mainThread]);
                     [self initDatasource];
                 });
             }else{
@@ -80,7 +80,6 @@
                 });
             }
         }];
-//    }
 }
 
 - (void)initDatasource{
@@ -118,20 +117,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-//    return self.albumsArray.count;
-    return 10;
+    return self.albumArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZJAlbumTableViewCell *albumCell = [self.tableView dequeueReusableCellWithIdentifier:@"ZJAlbumTableViewCell"];
     
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-    if(indexPath.row % 2 == 0){
-        cell.backgroundColor = [UIColor redColor];
-    }else{
-        cell.backgroundColor = [UIColor greenColor];
-    }
+    ZJAssertCollection *collection = self.albumArray[indexPath.row];
+    [albumCell bindmodel:collection.name];
     
-    return cell;
+    return albumCell;
 }
 
 #pragma mark -- UIEvent
@@ -149,6 +144,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [_tableView registerClass:[ZJAlbumTableViewCell class] forCellReuseIdentifier:@"ZJAlbumTableViewCell"];
     }
     return _tableView;
 }

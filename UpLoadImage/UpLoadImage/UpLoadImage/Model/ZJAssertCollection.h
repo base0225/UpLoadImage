@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithPHCollection:(PHAssetCollection *)phCollection fetchOption:(PHFetchOptions *)options;
 
+//相册名
+- (NSString *)name;
+
 @end
 
 NS_ASSUME_NONNULL_END

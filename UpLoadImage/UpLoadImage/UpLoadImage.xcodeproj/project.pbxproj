@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD0C19132261D58C00E3F0AB /* ZJCollectionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */; };
 		AD223FD92267260700208411 /* ZJDynamicImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD223FD82267260700208411 /* ZJDynamicImageCell.m */; };
+		AD2CC6B0226F4B9C0025E49B /* ZJAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2CC6AF226F4B9C0025E49B /* ZJAlbumTableViewCell.m */; };
 		AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78722260CE2C0028BAF9 /* UIView+Position.m */; };
 		AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */; };
 		AD63E208226DADC2002A2F06 /* ZJAssertCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AD63E207226DADC2002A2F06 /* ZJAssertCollection.m */; };
@@ -54,6 +55,8 @@
 		AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionCellModel.m; sourceTree = "<group>"; };
 		AD223FD72267260700208411 /* ZJDynamicImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJDynamicImageCell.h; sourceTree = "<group>"; };
 		AD223FD82267260700208411 /* ZJDynamicImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJDynamicImageCell.m; sourceTree = "<group>"; };
+		AD2CC6AE226F4B9C0025E49B /* ZJAlbumTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAlbumTableViewCell.h; sourceTree = "<group>"; };
+		AD2CC6AF226F4B9C0025E49B /* ZJAlbumTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAlbumTableViewCell.m; sourceTree = "<group>"; };
 		AD48D6BA2262D6120007BDA8 /* UpLoadImage.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpLoadImage.pch; sourceTree = "<group>"; };
 		AD5C78712260CE2C0028BAF9 /* UIView+Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
 		AD5C78722260CE2C0028BAF9 /* UIView+Position.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				AD223FD82267260700208411 /* ZJDynamicImageCell.m */,
 				AD7BD1DE2268C32E00F74BF7 /* ZJDynamicImageAddCell.h */,
 				AD7BD1DF2268C32E00F74BF7 /* ZJDynamicImageAddCell.m */,
+				AD2CC6AE226F4B9C0025E49B /* ZJAlbumTableViewCell.h */,
+				AD2CC6AF226F4B9C0025E49B /* ZJAlbumTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				ADAEA297226AF4E000EE1D8C /* ZJAssetGridViewController.m in Sources */,
 				ADAEA298226AF4E000EE1D8C /* ZJPostViewController.m in Sources */,
 				AD63E20C226DC093002A2F06 /* ZJAssets.m in Sources */,
+				AD2CC6B0226F4B9C0025E49B /* ZJAlbumTableViewCell.m in Sources */,
 				AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */,
 				ADAEA296226AF4E000EE1D8C /* ZJPublicViewController.m in Sources */,
 				AD63E20F226DD26D002A2F06 /* ZJAssets+ZJAssetsCategory.m in Sources */,
