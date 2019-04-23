@@ -14,6 +14,7 @@
 @interface ZJPHAssertManger()
 
 @property (nonatomic, strong) ZJAssertCollection *firstCollection;
+@property (nonatomic, strong) PHCachingImageManager *phCachingImageManager;
 
 @end
 
@@ -78,6 +79,13 @@
     if(block){
         block(nil);
     }
+}
+
+- (PHCachingImageManager *)phCachingImageManager{
+    if(!_phCachingImageManager){
+        _phCachingImageManager = [PHCachingImageManager new];
+    }
+    return _phCachingImageManager;
 }
 
 

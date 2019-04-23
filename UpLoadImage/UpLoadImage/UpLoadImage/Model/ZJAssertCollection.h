@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Photos/PHCollection.h>
 #import <Photos/PHAsset.h>
+#import <Photos/PHImageManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //相册名
 - (NSString *)name;
+
+- (NSInteger)numberOfAssets;
+
+- (UIImage *)thumbnailWithSize:(CGSize)size;
 
 @end
 

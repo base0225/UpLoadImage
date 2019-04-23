@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Photos/PHImageManager.h>
 
 @class ZJAssertCollection;
 
@@ -23,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shareInstance;
 
 + (ZJAssetAuthorizationStatus)authorizationStatus;
+
+- (PHCachingImageManager *)phCachingImageManager;
 
 + (void)requestAuthorization:(void(^)(ZJAssetAuthorizationStatus stauts))handler;
 
