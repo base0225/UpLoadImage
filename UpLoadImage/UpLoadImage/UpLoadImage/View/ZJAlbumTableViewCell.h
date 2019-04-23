@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJAlbumTableViewCell : UITableViewCell
 
-- (void)bindmodel:(NSString *)text;
+- (void)bindmodel:(NSString *)text andimage:(UIImage *)image;
 
 @end
 

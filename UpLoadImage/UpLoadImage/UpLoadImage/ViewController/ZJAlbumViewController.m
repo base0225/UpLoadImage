@@ -122,12 +122,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZJAlbumTableViewCell *albumCell = [self.tableView dequeueReusableCellWithIdentifier:@"ZJAlbumTableViewCell"];
-    
     ZJAssertCollection *collection = self.albumArray[indexPath.row];
-    [albumCell bindmodel:collection.name];
-    
+    [albumCell bindmodel:collection.name andimage:[collection thumbnailWithSize:CGSizeMake(100, 100)]];
     return albumCell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100.0f;
+}
+
 
 #pragma mark -- UIEvent
 - (void)cancel:(id)sender{

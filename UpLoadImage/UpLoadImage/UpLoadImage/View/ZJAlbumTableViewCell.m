@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UILabel *titlelabel;
 
+@property (nonatomic, strong) UIImageView *zjImageView;
+
 @end
 
 @implementation ZJAlbumTableViewCell
@@ -34,13 +36,21 @@
     self.titlelabel.textAlignment = NSTextAlignmentLeft;
     [self.contentView addSubview:self.titlelabel];
     
-    [self.titlelabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.0f];
+    self.zjImageView = [[UIImageView alloc] init];
+    [self.contentView addSubview:self.zjImageView];
+    
+    [self.zjImageView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    [self.zjImageView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [self.zjImageView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    
+    [self.titlelabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.zjImageView withOffset:10.0f];
     [self.titlelabel autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
     
 }
 
-- (void)bindmodel:(NSString *)text{
+- (void)bindmodel:(NSString *)text andimage:(UIImage *)image{
     self.titlelabel.text = text;
+    [self.zjImageView setImage:image];
 }
 
 
