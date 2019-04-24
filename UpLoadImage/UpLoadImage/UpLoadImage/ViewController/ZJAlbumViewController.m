@@ -10,6 +10,7 @@
 #import "ZJPHAssertManger.h"
 #import "ZJAssertCollection.h"
 #import "ZJAlbumTableViewCell.h"
+#import "ZJAssetGridViewController.h"
 
 @interface ZJAlbumViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UIView *topBarView;
@@ -41,7 +42,6 @@
 
 - (void)initpage{
     [self.view addSubview:self.tableView];
-    self.tableView.backgroundColor = [UIColor grayColor];
     [self.tableView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.tableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [self.tableView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
@@ -123,12 +123,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZJAlbumTableViewCell *albumCell = [self.tableView dequeueReusableCellWithIdentifier:@"ZJAlbumTableViewCell"];
     ZJAssertCollection *collection = self.albumArray[indexPath.row];
-    [albumCell bindmodel:collection.name andimage:[collection thumbnailWithSize:CGSizeMake(100, 100)]];
+    [albumCell bindmodel:collection.name andimage:[collection thumbnailWithSize:CGSizeMake(60, 60)]];
     return albumCell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100.0f;
+    return 70.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZJAssertCollection *collection = self.albumArray[indexPath.row];
+    ZJAssetGridViewController *gridViewController = [[ZJAssetGridViewController alloc] init];
+    [gridViewController refreshpPage:collection];
+    [self presentViewController:gridViewController animated:YES completion:^{
+    }];
 }
 
 

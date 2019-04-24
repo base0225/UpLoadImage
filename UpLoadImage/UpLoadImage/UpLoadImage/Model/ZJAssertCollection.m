@@ -36,7 +36,7 @@
 }
 
 - (UIImage *)thumbnailWithSize:(CGSize)size{
-    __block UIImage *resultImage = [UIImage imageNamed:@""];
+    __block UIImage *resultImage = [UIImage imageNamed:@"zj_live_default"];
     NSInteger count = self.result.count;
     if(count>0){
         PHAsset *asset = self.result[count - 1];
