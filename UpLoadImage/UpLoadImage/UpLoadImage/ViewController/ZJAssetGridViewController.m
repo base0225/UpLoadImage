@@ -8,6 +8,7 @@
 
 #import "ZJAssetGridViewController.h"
 #import "ZJGridCollectionCell.h"
+#import "ZJPostViewController.h"
 
 static CGFloat kZJAssetGridCellEdgeInset = 2;
 
@@ -65,8 +66,17 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 
 #pragma mark -- UIEvent
 - (void)cancel:(id)sender{
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
+    //回到特定的控制器
+    UIViewController *presentingVc = self.presentingViewController;
+    while (presentingVc.presentingViewController) {
+        presentingVc = presentingVc.presentingViewController;
+        if([presentingVc isKindOfClass:[ZJPostViewController class]]){
+            break;
+        }
+    }
+    if(presentingVc){
+        [presentingVc dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 
