@@ -9,6 +9,7 @@
 #import "ZJPublicViewController.h"
 #import "ZJCollectionViewCell.h"
 #import "ZJPostViewController.h"
+#import "ZJGridCollectionCell.h"
 
 const static CGFloat iconWidth = 130;
 const static CGFloat itemLineSpace = 10;

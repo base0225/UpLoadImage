@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZJAssertCollection.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJAssetGridViewController : UIViewController
+
+- (void)refreshpPage:(ZJAssertCollection *)collection;
 
 @end
 

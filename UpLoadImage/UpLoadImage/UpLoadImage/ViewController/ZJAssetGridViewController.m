@@ -7,10 +7,18 @@
 //
 
 #import "ZJAssetGridViewController.h"
+#import "ZJGridCollectionCell.h"
 
-@interface ZJAssetGridViewController ()
+static CGFloat kZJAssetGridCellEdgeInset = 2;
+
+@interface ZJAssetGridViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UIView *topBarView;
+
+@property (nonatomic, strong) ZJAssertCollection *collection;
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UICollectionViewFlowLayout *collectionViewLayout;
 
 @end
 
@@ -27,17 +35,33 @@
     [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:[[UIApplication sharedApplication] statusBarFrame].size.height];
     [self.topBarView autoSetDimension:ALDimensionHeight toSize:44.0f];
     
+    [self constructCollectionView];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UICollectionViewDelegate, UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
 }
-*/
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZJGridCollectionCell *gridCollectionCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJGridCollectionCell" forIndexPath:indexPath];
+    if(indexPath.row % 2 == 0){
+        gridCollectionCell.backgroundColor = [UIColor redColor];
+    }else{
+        gridCollectionCell.backgroundColor = [UIColor greenColor];
+    }
+    return gridCollectionCell;
+}
+
 
 #pragma mark -- UIEvent
 - (void)cancel:(id)sender{
@@ -52,6 +76,26 @@
 }
 
 #pragma mark -- UI
+
+- (void)constructCollectionView{
+    _collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
+    _collectionViewLayout.sectionInset = UIEdgeInsetsMake(kZJAssetGridCellEdgeInset, kZJAssetGridCellEdgeInset, kZJAssetGridCellEdgeInset, kZJAssetGridCellEdgeInset);
+    _collectionViewLayout.minimumLineSpacing = kZJAssetGridCellEdgeInset;
+    _collectionViewLayout.minimumInteritemSpacing = kZJAssetGridCellEdgeInset;
+    
+    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:_collectionViewLayout];
+    _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
+    _collectionView.scrollsToTop = NO;
+    [_collectionView registerClass:[ZJGridCollectionCell class] forCellWithReuseIdentifier:@"ZJGridCollectionCell"];
+    [self.view addSubview:self.collectionView];
+    [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_collectionView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topBarView];
+    [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+}
+
 - (UIView *)topBarView{
     if(!_topBarView){
         _topBarView = [[UIView alloc] init];
@@ -91,5 +135,9 @@
     return _topBarView;
 }
 
+- (void)refreshpPage:(ZJAssertCollection *)collection
+{
+    _collection = collection;
+}
 
 @end
