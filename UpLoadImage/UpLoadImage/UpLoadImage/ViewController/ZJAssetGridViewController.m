@@ -75,6 +75,8 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
         }
     }
     if(presentingVc){
+        //发送一个通知回去
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"zjgridArray" object:@{@"array":@[@"1111"]}];
         [presentingVc dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -83,6 +85,11 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 - (void)dismissViewController:(id)sender{
     [self dismissViewControllerAnimated:YES completion:^{
     }];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 #pragma mark -- UI

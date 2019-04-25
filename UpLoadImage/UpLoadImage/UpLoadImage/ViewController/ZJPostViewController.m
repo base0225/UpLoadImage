@@ -39,7 +39,13 @@ static const CGFloat collectionViewInsetTop = 130;
     
     [self.collectionView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(collectionViewInsetTop, 10, 0, 10)];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateArray:) name:@"zjgridArray" object:nil];
 }
+
+- (void)updateArray:(NSNotification*)notification{
+    NSLog(@"%@",notification);
+}
+
 
 #pragma mark -- UI Event
 

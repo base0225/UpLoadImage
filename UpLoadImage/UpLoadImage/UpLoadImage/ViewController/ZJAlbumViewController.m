@@ -55,6 +55,10 @@
 
 }
 
+- (void)backArray:(NSArray *)arry{
+    
+}
+
 - (void)checkAuthorization{
 //    if([ZJPHAssertManger authorizationStatus] == ZJAssetAuthorizationStatusNotDetermined){
 //
