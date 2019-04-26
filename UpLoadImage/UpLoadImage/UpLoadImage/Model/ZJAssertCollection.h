@@ -10,6 +10,7 @@
 #import <Photos/PHCollection.h>
 #import <Photos/PHAsset.h>
 #import <Photos/PHImageManager.h>
+@class ZJAssets;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)numberOfAssets;
 
 - (UIImage *)thumbnailWithSize:(CGSize)size;
+
+- (void)enumerateAssetsWithOptions:(NSInteger)type usingBlock:(void(^)(ZJAssets *))block;
 
 @end
 

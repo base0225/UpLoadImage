@@ -21,6 +21,10 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *collectionViewLayout;
 
+@property (nonatomic, strong) UILabel *titleLable;
+
+@property (nonatomic, strong) NSMutableArray *assetsDatasource;
+
 @end
 
 @implementation ZJAssetGridViewController
@@ -49,12 +53,14 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    return self.assetsDatasource.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ZJGridCollectionCell *gridCollectionCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJGridCollectionCell" forIndexPath:indexPath];
+//    ZJAssets *asset = [self.assetsDatasource objectAtIndex:indexPath.row];
+
     if(indexPath.row % 2 == 0){
         gridCollectionCell.backgroundColor = [UIColor redColor];
     }else{
@@ -132,12 +138,12 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
         [leftButton autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         [leftButton autoSetDimensionsToSize:CGSizeMake(30, 40)];
         
-        UILabel *titleLable = [[UILabel alloc] init];
-        titleLable.textAlignment = NSTextAlignmentCenter;
-        titleLable.text = @"相机胶卷";
-        [_topBarView addSubview:titleLable];
-        [titleLable autoAlignAxisToSuperviewAxis:ALAxisVertical];
-        [titleLable autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        self.titleLable = [[UILabel alloc] init];
+        self.titleLable.textAlignment = NSTextAlignmentCenter;
+        self.titleLable.text = @"相机胶卷";
+        [_topBarView addSubview:self.titleLable];
+        [self.titleLable autoAlignAxisToSuperviewAxis:ALAxisVertical];
+        [self.titleLable autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         rightButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -155,6 +161,25 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 - (void)refreshpPage:(ZJAssertCollection *)collection
 {
     _collection = collection;
+    self.titleLable.text = [collection name];
+    
+    if(!self.assetsDatasource){
+        _assetsDatasource = [NSMutableArray array];
+    }else{
+        [self.assetsDatasource removeAllObjects];
+    }
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self.collection enumerateAssetsWithOptions:0 usingBlock:^(ZJAssets *resultAsset) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if(resultAsset){
+                    [self.assetsDatasource addObject:resultAsset];
+                }else{
+                    [self.collectionView reloadData];
+                }
+            });
+        }];
+    });
+    
 }
 
 @end

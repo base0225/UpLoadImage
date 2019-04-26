@@ -7,6 +7,7 @@
 //
 
 #import "ZJAssets.h"
+#import "ZJPHAssertManger.h"
 
 @interface ZJAssets (){
     PHAsset *_phAsset;
@@ -36,6 +37,16 @@
         }
     }
     return self;
+}
+
+- (NSInteger)requestThumbnailImageWithSize:(CGSize)size completion:(void(^)(UIImage *result,NSDictionary<NSString *, id> *info))completion{
+    PHImageRequestOptions *imageRequestions = [[PHImageRequestOptions alloc] init];
+    imageRequestions.resizeMode = PHImageRequestOptionsResizeModeFast;
+    return [[[ZJPHAssertManger shareInstance] phCachingImageManager] requestImageForAsset:_phAsset targetSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) contentMode:PHImageContentModeAspectFill options:imageRequestions resultHandler:^(UIImage *result, NSDictionary *info) {
+        if(completion){
+            completion(result,info);
+        }
+    }];
 }
 
 @end

@@ -153,6 +153,8 @@
 				AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */,
 				AD63E206226DADC2002A2F06 /* ZJAssertCollection.h */,
 				AD63E207226DADC2002A2F06 /* ZJAssertCollection.m */,
+				AD63E20A226DC093002A2F06 /* ZJAssets.h */,
+				AD63E20B226DC093002A2F06 /* ZJAssets.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,8 +286,6 @@
 			children = (
 				ADAEA29D226AF52300EE1D8C /* ZJPHAssertManger.h */,
 				ADAEA29E226AF52300EE1D8C /* ZJPHAssertManger.m */,
-				AD63E20A226DC093002A2F06 /* ZJAssets.h */,
-				AD63E20B226DC093002A2F06 /* ZJAssets.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";

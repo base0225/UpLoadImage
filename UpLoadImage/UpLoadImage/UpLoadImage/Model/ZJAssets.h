@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Photos/PHAsset.h>
+#import <Photos/PHImageManager.h>
 
 
 typedef NS_ENUM(NSUInteger, ZJAssetType) {
@@ -32,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithPHAsset:(PHAsset *)phAsset;
 
 @property (nonatomic, strong ,readonly) PHAsset *phAsset;
+
+- (NSInteger)requestThumbnailImageWithSize:(CGSize)size completion:(void(^)(UIImage *result,NSDictionary<NSString *, id> *info))completion;
+
 
 @end
 
