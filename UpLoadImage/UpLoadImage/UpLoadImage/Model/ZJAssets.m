@@ -11,6 +11,7 @@
 
 @interface ZJAssets (){
     PHAsset *_phAsset;
+    NSString *_identifier;
 }
 
 @property (nonatomic, copy) NSDictionary *phAssetInfo;
@@ -37,6 +38,10 @@
         }
     }
     return self;
+}
+
+- (NSString *)identifier{
+    return _phAsset.localIdentifier;
 }
 
 - (NSInteger)requestThumbnailImageWithSize:(CGSize)size completion:(void(^)(UIImage *result,NSDictionary<NSString *, id> *info))completion{

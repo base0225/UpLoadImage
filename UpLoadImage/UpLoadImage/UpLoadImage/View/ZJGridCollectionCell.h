@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJGridCollectionCell : UICollectionViewCell
 
+@property(nonatomic, copy) NSString *assetIdentifier;
+
+- (void)bindMode:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END

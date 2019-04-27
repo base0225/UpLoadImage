@@ -29,13 +29,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign ,readonly) ZJAssetType assetType;
 @property (nonatomic, assign, readonly) ZJAssetSubType assetSubType;
+@property (nonatomic, strong ,readonly) PHAsset *phAsset;
+@property (nonatomic, copy, readonly) NSString *identifier;
 
 - (instancetype)initWithPHAsset:(PHAsset *)phAsset;
 
-@property (nonatomic, strong ,readonly) PHAsset *phAsset;
-
 - (NSInteger)requestThumbnailImageWithSize:(CGSize)size completion:(void(^)(UIImage *result,NSDictionary<NSString *, id> *info))completion;
 
+- (void)test;
 
 @end
 

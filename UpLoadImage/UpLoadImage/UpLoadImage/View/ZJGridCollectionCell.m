@@ -8,13 +8,31 @@
 
 #import "ZJGridCollectionCell.h"
 
+@interface ZJGridCollectionCell ()
+
+@property (nonatomic, strong) UIImageView *contentImageView;
+
+@end
+
 @implementation ZJGridCollectionCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if(self = [super initWithFrame:frame]){
-        
+        [self constructView];
     }
     return self;
+}
+
+- (void)constructView{
+    self.contentImageView = [[UIImageView alloc] init];
+    self.contentImageView.backgroundColor = [UIColor redColor];
+    [self.contentView addSubview:self.contentImageView];
+    
+    [self.contentImageView autoPinEdgesToSuperviewEdges];
+}
+
+- (void)bindMode:(UIImage *)image{
+    [self.contentImageView setImage:image];
 }
 
 @end

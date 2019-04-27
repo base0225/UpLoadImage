@@ -9,6 +9,7 @@
 #import "ZJAssetGridViewController.h"
 #import "ZJGridCollectionCell.h"
 #import "ZJPostViewController.h"
+#import "ZJAssets.h"
 
 static CGFloat kZJAssetGridCellEdgeInset = 2;
 
@@ -59,14 +60,18 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ZJGridCollectionCell *gridCollectionCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJGridCollectionCell" forIndexPath:indexPath];
-//    ZJAssets *asset = [self.assetsDatasource objectAtIndex:indexPath.row];
-
-    if(indexPath.row % 2 == 0){
-        gridCollectionCell.backgroundColor = [UIColor redColor];
-    }else{
-        gridCollectionCell.backgroundColor = [UIColor greenColor];
-    }
+    ZJAssets *asset = [self.assetsDatasource objectAtIndex:indexPath.row];
+    gridCollectionCell.assetIdentifier = asset.identifier;
+    [asset requestThumbnailImageWithSize:CGSizeMake(150, 150) completion:^(UIImage * _Nonnull result, NSDictionary<NSString *,id> * _Nonnull info) {
+        if([gridCollectionCell.assetIdentifier isEqualToString:asset.identifier]){
+            [gridCollectionCell bindMode:result];
+        }
+    }];
     return gridCollectionCell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(([UIScreen mainScreen].bounds.size.width-8)/3.0f, ([UIScreen mainScreen].bounds.size.width-8)/3.0f);
 }
 
 
@@ -95,7 +100,6 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
 }
 
 #pragma mark -- UI
@@ -179,7 +183,6 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
             });
         }];
     });
-    
 }
 
 @end
