@@ -10,6 +10,7 @@
 #import "ZJGridCollectionCell.h"
 #import "ZJPostViewController.h"
 #import "ZJAssets.h"
+#import "ZJAssetBrowserViewController.h"
 
 static CGFloat kZJAssetGridCellEdgeInset = 2;
 
@@ -105,6 +106,8 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 
 - (void)prebBrower:(id)sender{
     
+    ZJAssetBrowserViewController *browerViewController = [[ZJAssetBrowserViewController alloc] init];
+    [self pushViewController:browerViewController animated:YES];
 }
 
 - (void)clickCheckBox:(UIButton *)button event:(UIEvent *)event{

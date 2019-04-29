@@ -10,6 +10,7 @@
 		AD0C19132261D58C00E3F0AB /* ZJCollectionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0C19122261D58C00E3F0AB /* ZJCollectionCellModel.m */; };
 		AD223FD92267260700208411 /* ZJDynamicImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD223FD82267260700208411 /* ZJDynamicImageCell.m */; };
 		AD2AAD7922768B68003B9A58 /* ZJAssets+ZJAssetsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AAD7822768B68003B9A58 /* ZJAssets+ZJAssetsCategory.m */; };
+		AD2AAD7C2276FD6A003B9A58 /* ZJAssetBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AAD7B2276FD6A003B9A58 /* ZJAssetBrowserViewController.m */; };
 		AD2CC6B0226F4B9C0025E49B /* ZJAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2CC6AF226F4B9C0025E49B /* ZJAlbumTableViewCell.m */; };
 		AD5C78732260CE2C0028BAF9 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78722260CE2C0028BAF9 /* UIView+Position.m */; };
 		AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5C78762260D3890028BAF9 /* ZJCollectionViewCell.m */; };
@@ -58,6 +59,8 @@
 		AD223FD82267260700208411 /* ZJDynamicImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJDynamicImageCell.m; sourceTree = "<group>"; };
 		AD2AAD7722768B68003B9A58 /* ZJAssets+ZJAssetsCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ZJAssets+ZJAssetsCategory.h"; path = "UpLoadImage/Category/ZJAssets+ZJAssetsCategory.h"; sourceTree = SOURCE_ROOT; };
 		AD2AAD7822768B68003B9A58 /* ZJAssets+ZJAssetsCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ZJAssets+ZJAssetsCategory.m"; path = "UpLoadImage/Category/ZJAssets+ZJAssetsCategory.m"; sourceTree = SOURCE_ROOT; };
+		AD2AAD7A2276FD6A003B9A58 /* ZJAssetBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAssetBrowserViewController.h; sourceTree = "<group>"; };
+		AD2AAD7B2276FD6A003B9A58 /* ZJAssetBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAssetBrowserViewController.m; sourceTree = "<group>"; };
 		AD2CC6AE226F4B9C0025E49B /* ZJAlbumTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAlbumTableViewCell.h; sourceTree = "<group>"; };
 		AD2CC6AF226F4B9C0025E49B /* ZJAlbumTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAlbumTableViewCell.m; sourceTree = "<group>"; };
 		AD48D6BA2262D6120007BDA8 /* UpLoadImage.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpLoadImage.pch; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 				ADAEA290226AF4E000EE1D8C /* ZJAssetGridViewController.m */,
 				ADAEA291226AF4E000EE1D8C /* ZJAlbumViewController.h */,
 				ADAEA295226AF4E000EE1D8C /* ZJAlbumViewController.m */,
+				AD2AAD7A2276FD6A003B9A58 /* ZJAssetBrowserViewController.h */,
+				AD2AAD7B2276FD6A003B9A58 /* ZJAssetBrowserViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD0C19132261D58C00E3F0AB /* ZJCollectionCellModel.m in Sources */,
+				AD2AAD7C2276FD6A003B9A58 /* ZJAssetBrowserViewController.m in Sources */,
 				AD63E208226DADC2002A2F06 /* ZJAssertCollection.m in Sources */,
 				AD2AAD7922768B68003B9A58 /* ZJAssets+ZJAssetsCategory.m in Sources */,
 				AD8451D0225F86F00022FA93 /* ViewController.m in Sources */,

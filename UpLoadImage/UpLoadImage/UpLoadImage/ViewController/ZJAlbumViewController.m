@@ -16,7 +16,6 @@
 @property (nonatomic, strong) UIView *topBarView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UILabel *tipsLabel;
-
 //data
 @property (nonatomic, strong)  NSMutableArray *albumArray;
 @end
