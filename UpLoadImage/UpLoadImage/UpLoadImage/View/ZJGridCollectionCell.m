@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UIImageView *contentImageView;
 
+
 @end
 
 @implementation ZJGridCollectionCell
@@ -27,6 +28,14 @@
     self.contentImageView = [[UIImageView alloc] init];
     self.contentImageView.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:self.contentImageView];
+    
+    self.checkBoxButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.checkBoxButton setImage:[UIImage imageNamed:@"zj_image_unSelect"] forState:UIControlStateNormal];
+    [self.checkBoxButton setImage:[UIImage imageNamed:@"zj_image_select"] forState:UIControlStateSelected];
+    [self.contentView addSubview:self.checkBoxButton];
+    
+    [self.checkBoxButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10.0f];
+    [self.checkBoxButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10.0f];
     
     [self.contentImageView autoPinEdgesToSuperviewEdges];
 }

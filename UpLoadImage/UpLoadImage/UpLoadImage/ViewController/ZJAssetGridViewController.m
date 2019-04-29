@@ -21,10 +21,13 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *collectionViewLayout;
+@property (nonatomic, strong) UIView *bottomView;
+
 
 @property (nonatomic, strong) UILabel *titleLable;
 
 @property (nonatomic, strong) NSMutableArray *assetsDatasource;
+@property (nonatomic, strong) NSMutableArray *selectedImageArray;
 
 @end
 
@@ -41,7 +44,13 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
     [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:[[UIApplication sharedApplication] statusBarFrame].size.height];
     [self.topBarView autoSetDimension:ALDimensionHeight toSize:44.0f];
     
+    [self.view addSubview:self.bottomView];
     [self constructCollectionView];
+    
+    [self.bottomView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [self.bottomView autoSetDimension:ALDimensionHeight toSize:44.0f];
+    [self.bottomView autoPinEdgeToSuperviewEdge:ALEdgeLeading];
+    [self.bottomView autoPinEdgeToSuperviewEdge:ALEdgeTrailing];
 }
 
 
@@ -67,6 +76,7 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
             [gridCollectionCell bindMode:result];
         }
     }];
+    [gridCollectionCell.checkBoxButton addTarget:self action:@selector(clickCheckBox:event:) forControlEvents:UIControlEventTouchUpInside];
     return gridCollectionCell;
 }
 
@@ -76,7 +86,8 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 
 
 #pragma mark -- UIEvent
-- (void)cancel:(id)sender{
+
+- (void)completionBtn:(id)sender{
     //回到特定的控制器
     UIViewController *presentingVc = self.presentingViewController;
     while (presentingVc.presentingViewController) {
@@ -87,7 +98,40 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
     }
     if(presentingVc){
         //发送一个通知回去
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"zjgridArray" object:@{@"array":@[@"1111"]}];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"zjgridArray" object:@{@"array":self.selectedImageArray}];
+        [presentingVc dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+- (void)prebBrower:(id)sender{
+    
+}
+
+- (void)clickCheckBox:(UIButton *)button event:(UIEvent *)event{
+    button.selected = !button.selected;
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:self.collectionView];
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:location];
+    ZJAssets *asset = [self.assetsDatasource objectAtIndex:indexPath.row];
+    
+    if(button.selected){
+        [self.selectedImageArray addObject:asset];
+        
+    }else{
+        [self.selectedImageArray removeObject:asset];
+    }
+}
+
+- (void)cancel:(id)sender{
+    //回到特定的控制器
+    UIViewController *presentingVc = self.presentingViewController;
+    while (presentingVc.presentingViewController) {
+        presentingVc = presentingVc.presentingViewController;
+        if([presentingVc isKindOfClass:[ZJPostViewController class]]){
+            break;
+        }
+    }
+    if(presentingVc){
         [presentingVc dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -120,7 +164,35 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
     [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [_collectionView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topBarView];
-    [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [_collectionView autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.bottomView];
+}
+
+- (UIView *)bottomView{
+    if(!_bottomView){
+        _bottomView = [[UIView alloc] init];
+        _bottomView.backgroundColor = [UIColor orangeColor];
+        UIButton *completeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [completeButton setTitle:@"完成" forState:UIControlStateNormal];
+        [completeButton addTarget:self action:@selector(completionBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomView addSubview:completeButton];
+        
+        UIButton *browerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [browerButton setTitle:@"预览" forState:UIControlStateNormal];
+        [browerButton addTarget:self action:@selector(prebBrower:) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomView addSubview:browerButton];
+        
+        [completeButton autoSetDimension:ALDimensionWidth toSize:84.0f];
+        [completeButton autoPinEdgeToSuperviewEdge:ALEdgeTrailing];
+        [completeButton autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [completeButton autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+        
+        [browerButton autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [browerButton autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [browerButton autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+        [browerButton autoSetDimension:ALDimensionWidth toSize:84.0f];
+        
+    }
+    return _bottomView;
 }
 
 - (UIView *)topBarView{
@@ -169,6 +241,7 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
     
     if(!self.assetsDatasource){
         _assetsDatasource = [NSMutableArray array];
+        _selectedImageArray = [NSMutableArray array];
     }else{
         [self.assetsDatasource removeAllObjects];
     }

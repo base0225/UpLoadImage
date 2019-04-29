@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy) NSString *assetIdentifier;
 
+@property (nonatomic, strong) UIButton *checkBoxButton;
+
 - (void)bindMode:(UIImage *)image;
 
 @end
