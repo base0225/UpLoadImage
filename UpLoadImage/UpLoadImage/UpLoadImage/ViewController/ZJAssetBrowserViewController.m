@@ -20,22 +20,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
     
+    [self.view addSubview:self.topBarView];
+    [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:[[UIApplication sharedApplication] statusBarFrame].size.height];
+    [self.topBarView autoSetDimension:ALDimensionHeight toSize:44.0f];
     
-//    [self.view addSubview:self.topBarView];
-//    [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-//    [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-//    [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:[[UIApplication sharedApplication] statusBarFrame].size.height];
-//    [self.topBarView autoSetDimension:ALDimensionHeight toSize:44.0f];
-    
-    self.view.backgroundColor = [UIColor clearColor];
     
     
 }
 
 #pragma mark -- UIEvent
 - (void)dismissViewController:(id)sender{
-//    [self popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

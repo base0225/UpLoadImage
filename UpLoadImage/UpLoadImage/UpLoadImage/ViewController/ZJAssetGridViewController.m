@@ -107,7 +107,8 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 - (void)prebBrower:(id)sender{
     
     ZJAssetBrowserViewController *browerViewController = [[ZJAssetBrowserViewController alloc] init];
-    [self pushViewController:browerViewController animated:YES];
+    [self.navigationController pushViewController:browerViewController animated:YES];
+    
 }
 
 - (void)clickCheckBox:(UIButton *)button event:(UIEvent *)event{

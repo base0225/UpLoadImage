@@ -139,7 +139,9 @@
     ZJAssertCollection *collection = self.albumArray[indexPath.row];
     ZJAssetGridViewController *gridViewController = [[ZJAssetGridViewController alloc] init];
     [gridViewController refreshpPage:collection];
-    [self presentViewController:gridViewController animated:YES completion:^{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:gridViewController];
+    
+    [self presentViewController:nav animated:YES completion:^{
     }];
 }
 

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZJAssetGridViewController : UINavigationController
+@interface ZJAssetGridViewController : UIViewController
 
 - (void)refreshpPage:(ZJAssertCollection *)collection;
 
