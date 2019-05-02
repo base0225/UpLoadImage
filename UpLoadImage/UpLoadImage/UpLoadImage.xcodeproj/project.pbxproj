@@ -30,6 +30,7 @@
 		ADAEA298226AF4E000EE1D8C /* ZJPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEA292226AF4E000EE1D8C /* ZJPostViewController.m */; };
 		ADAEA299226AF4E000EE1D8C /* ZJAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEA295226AF4E000EE1D8C /* ZJAlbumViewController.m */; };
 		ADAEA29F226AF52300EE1D8C /* ZJPHAssertManger.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAEA29E226AF52300EE1D8C /* ZJPHAssertManger.m */; };
+		ADC6ABC32279A543007B273C /* ZJBrowserCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6ABC22279A543007B273C /* ZJBrowserCollectionCell.m */; };
 		ADDDFFB4227040EB00FCD9B8 /* ZJGridCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDFFB3227040EA00FCD9B8 /* ZJGridCollectionCell.m */; };
 		D0ACF41EA17850D21FA095DB /* libPods-UpLoadImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7641F7BEEC22DCD43BAF1A57 /* libPods-UpLoadImage.a */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,8 @@
 		ADAEA295226AF4E000EE1D8C /* ZJAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAlbumViewController.m; sourceTree = "<group>"; };
 		ADAEA29D226AF52300EE1D8C /* ZJPHAssertManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPHAssertManger.h; sourceTree = "<group>"; };
 		ADAEA29E226AF52300EE1D8C /* ZJPHAssertManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPHAssertManger.m; sourceTree = "<group>"; };
+		ADC6ABC12279A543007B273C /* ZJBrowserCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBrowserCollectionCell.h; sourceTree = "<group>"; };
+		ADC6ABC22279A543007B273C /* ZJBrowserCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBrowserCollectionCell.m; sourceTree = "<group>"; };
 		ADDDFFB2227040EA00FCD9B8 /* ZJGridCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJGridCollectionCell.h; sourceTree = "<group>"; };
 		ADDDFFB3227040EA00FCD9B8 /* ZJGridCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJGridCollectionCell.m; sourceTree = "<group>"; };
 		B15F733E1314C5C38B2F672A /* Pods-UpLoadImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpLoadImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpLoadImage/Pods-UpLoadImage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				AD2CC6AF226F4B9C0025E49B /* ZJAlbumTableViewCell.m */,
 				ADDDFFB2227040EA00FCD9B8 /* ZJGridCollectionCell.h */,
 				ADDDFFB3227040EA00FCD9B8 /* ZJGridCollectionCell.m */,
+				ADC6ABC12279A543007B273C /* ZJBrowserCollectionCell.h */,
+				ADC6ABC22279A543007B273C /* ZJBrowserCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 				AD2CC6B0226F4B9C0025E49B /* ZJAlbumTableViewCell.m in Sources */,
 				AD5C78772260D3890028BAF9 /* ZJCollectionViewCell.m in Sources */,
 				ADDDFFB4227040EB00FCD9B8 /* ZJGridCollectionCell.m in Sources */,
+				ADC6ABC32279A543007B273C /* ZJBrowserCollectionCell.m in Sources */,
 				ADAEA296226AF4E000EE1D8C /* ZJPublicViewController.m in Sources */,
 				AD8451CD225F86F00022FA93 /* AppDelegate.m in Sources */,
 				ADAEA29F226AF52300EE1D8C /* ZJPHAssertManger.m in Sources */,
