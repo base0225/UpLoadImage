@@ -59,7 +59,6 @@
 }
 
 - (void)enumberateAllAlbumsWithType:(NSInteger)type showEmptyAlbum:(BOOL)showEmptyAlbum showSmartAlbum:(BOOL)showSmartAlbum block:(void(^)(ZJAssertCollection *))block{
-    
     //获取全部相册
     NSArray<PHAssetCollection *> *tempAlbumsArray = [ZJAssets fetchAllAlbumWithType:type showEmptyAlbum:showSmartAlbum showSmartAlbum:showSmartAlbum];
     PHFetchOptions *options = [PHFetchOptions new];

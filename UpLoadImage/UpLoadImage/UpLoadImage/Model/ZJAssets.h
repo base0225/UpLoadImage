@@ -34,9 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithPHAsset:(PHAsset *)phAsset;
 
-- (NSInteger)requestThumbnailImageWithSize:(CGSize)size completion:(void(^)(UIImage *result,NSDictionary<NSString *, id> *info))completion;
+- (void)requestThumbnailImageWithSize:(CGSize)size completion:(void(^)(UIImage *result,NSDictionary<NSString *, id> *info))completion;
 
-- (void)test;
+- (void)requestPreviewImageWithCompletion:(void (^)(UIImage *result, NSDictionary<NSString *, id> *info))completion withProgressHandler:(PHAssetImageProgressHandler)phProgressHandler;
 
 @end
 

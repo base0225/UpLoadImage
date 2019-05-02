@@ -39,6 +39,8 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self.navigationController setNavigationBarHidden:YES];
+    
     [self.view addSubview:self.topBarView];
     [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.topBarView autoPinEdgeToSuperviewEdge:ALEdgeRight];
@@ -107,6 +109,7 @@ static CGFloat kZJAssetGridCellEdgeInset = 2;
 - (void)prebBrower:(id)sender{
     
     ZJAssetBrowserViewController *browerViewController = [[ZJAssetBrowserViewController alloc] init];
+    browerViewController.dataSource = self.selectedImageArray;
     [self.navigationController pushViewController:browerViewController animated:YES];
     
 }

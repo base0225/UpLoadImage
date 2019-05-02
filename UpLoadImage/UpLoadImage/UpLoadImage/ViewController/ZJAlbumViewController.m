@@ -87,7 +87,6 @@
 
 - (void)initDatasource{
     self.albumArray = [NSMutableArray array];
-    
     //加载图片
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __weak __typeof(self)weakSelf = self;
@@ -140,7 +139,6 @@
     ZJAssetGridViewController *gridViewController = [[ZJAssetGridViewController alloc] init];
     [gridViewController refreshpPage:collection];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:gridViewController];
-    
     [self presentViewController:nav animated:YES completion:^{
     }];
 }
@@ -149,6 +147,7 @@
 #pragma mark -- UIEvent
 - (void)cancel:(id)sender{
     [self dismissViewControllerAnimated:YES completion:^{
+        
     }];
 }
 

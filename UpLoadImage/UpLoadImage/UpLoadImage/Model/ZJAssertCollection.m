@@ -55,7 +55,7 @@
 - (void)enumerateAssetsWithOptions:(NSInteger)type usingBlock:(void(^)(ZJAssets *))block{
     NSInteger resultCount = self.result.count;
     if(type == 1){
-        for (NSInteger i = resultCount -1; i<=0; i--) {
+        for (NSInteger i = resultCount -1; i <= 0; i--) {
             PHAsset *phAsset = self.result[i];
             ZJAssets *asset = [[ZJAssets alloc] initWithPHAsset:phAsset];
             if(block){
@@ -63,7 +63,7 @@
             }
         }
     }else{
-        for(NSInteger i = 0; i<resultCount;i++){
+        for(NSInteger i = 0; i < resultCount; i++){
             PHAsset *phAsset = self.result[i];
             ZJAssets *asset = [[ZJAssets alloc] initWithPHAsset:phAsset];
             if(block){

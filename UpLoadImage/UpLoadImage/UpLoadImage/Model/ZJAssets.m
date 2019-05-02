@@ -44,10 +44,24 @@
     return _phAsset.localIdentifier;
 }
 
-- (NSInteger)requestThumbnailImageWithSize:(CGSize)size completion:(void(^)(UIImage *result,NSDictionary<NSString *, id> *info))completion{
+- (void)requestThumbnailImageWithSize:(CGSize)size completion:(void(^)(UIImage *result,NSDictionary<NSString *, id> *info))completion{
     PHImageRequestOptions *imageRequestions = [[PHImageRequestOptions alloc] init];
     imageRequestions.resizeMode = PHImageRequestOptionsResizeModeFast;
-    return [[[ZJPHAssertManger shareInstance] phCachingImageManager] requestImageForAsset:_phAsset targetSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) contentMode:PHImageContentModeAspectFill options:imageRequestions resultHandler:^(UIImage *result, NSDictionary *info) {
+    [[[ZJPHAssertManger shareInstance] phCachingImageManager] requestImageForAsset:_phAsset targetSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) contentMode:PHImageContentModeAspectFill options:imageRequestions resultHandler:^(UIImage *result, NSDictionary *info) {
+        if(completion){
+            completion(result,info);
+        }
+    }];
+}
+
+
+- (void)requestPreviewImageWithCompletion:(void (^)(UIImage *result, NSDictionary<NSString *, id> *info))completion withProgressHandler:(PHAssetImageProgressHandler)phProgressHandler {
+    PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
+    imageRequestOptions.networkAccessAllowed = YES;
+    imageRequestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
+    imageRequestOptions.progressHandler = phProgressHandler;
+    imageRequestOptions.synchronous = NO;
+    [[[ZJPHAssertManger shareInstance] phCachingImageManager] requestImageForAsset:_phAsset targetSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) contentMode:PHImageContentModeAspectFill options:imageRequestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         if(completion){
             completion(result,info);
         }
