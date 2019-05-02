@@ -19,6 +19,8 @@ static const CGFloat collectionViewInsetTop = 130;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
+@property (nonatomic, strong) NSArray *dataSource;
+
 @end
 
 @implementation ZJPostViewController
@@ -43,7 +45,11 @@ static const CGFloat collectionViewInsetTop = 130;
 }
 
 - (void)updateArray:(NSNotification*)notification{
-    NSLog(@"%@",notification);
+    NSDictionary *object = notification.object;
+    self.dataSource = object[@"array"];
+    NSLog(@"%@",self.dataSource);
+    [self.collectionView reloadData];
+    
 }
 
 
@@ -63,7 +69,7 @@ static const CGFloat collectionViewInsetTop = 130;
 #pragma mark -- collectionView DataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return self.dataSource.count + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -76,10 +82,10 @@ static const CGFloat collectionViewInsetTop = 130;
     }else
     {
         ZJDynamicImageCell *imageCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageCell" forIndexPath:indexPath];
+        ZJAssets *asset = [self.dataSource objectAtIndex:(indexPath.row-1)];
+        [imageCell bindMode:asset];
         cell = imageCell;
     }
-   
-    
    return cell;
 }
 
@@ -142,7 +148,7 @@ static const CGFloat collectionViewInsetTop = 130;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.backgroundColor = [UIColor grayColor];
+        _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.alwaysBounceVertical = true;
         _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         [_collectionView registerClass:NSClassFromString(@"ZJDynamicImageCell") forCellWithReuseIdentifier:@"ZJDynamicImageCell"];

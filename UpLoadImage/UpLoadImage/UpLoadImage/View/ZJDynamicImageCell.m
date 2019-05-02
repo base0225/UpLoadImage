@@ -7,10 +7,12 @@
 //
 
 #import "ZJDynamicImageCell.h"
+#import "ZJAssets.h"
 
 @interface ZJDynamicImageCell ()
 
 @property (nonatomic, strong) UIImageView *zjImageView;
+@property (nonatomic, strong) ZJAssets *tempAssets;
 
 @end
 
@@ -31,6 +33,25 @@
     
     [self.zjImageView autoPinEdgesToSuperviewEdges];
     
+}
+
+- (void)bindMode:(ZJAssets *)assets{
+    _tempAssets = assets;
+    [_tempAssets requestPreviewImageWithCompletion:^(UIImage * _Nonnull result, NSDictionary<NSString *,id> * _Nonnull info) {
+        if(result){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //                CGFloat imageWidth = [UIScreen mainScreen].bounds.size.width;
+                //                CGFloat imageHeight = [UIScreen mainScreen].bounds.size.height;
+                //                self.imgView.width = imageWidth;
+                //                self.imgView.height = imageHeight;
+                self.zjImageView.image = result;
+                //                self.scrollView.contentSize = CGSizeMake(self.imgView.width, self.imgView.height);
+                //                self.imgView.center = [self centerOfScrollViewContent:_scrollView];
+            });
+        }
+    } withProgressHandler:^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
+        
+    }];
 }
 
 

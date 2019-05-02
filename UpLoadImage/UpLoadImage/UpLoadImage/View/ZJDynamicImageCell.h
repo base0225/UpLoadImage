@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ZJAssets;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJDynamicImageCell : UICollectionViewCell
+
+- (void)bindMode:(ZJAssets *)assets;
 
 @end
 
