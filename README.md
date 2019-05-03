@@ -1,15 +1,16 @@
 # UpLoadImage
 一个类似于豆瓣的图片、视频上传功能，基于photoKit.
+
 功能：
 
 ![image](https://github.com/base0225/images/blob/master/1.png)
 ![image](https://github.com/base0225/images/blob/master/3.png)
 ![image](https://github.com/base0225/images/blob/master/5.png)
 ![image](https://github.com/base0225/images/blob/master/6.png)
-![image](https://github.com/base0225/images/blob/master/7.png)
 
 
 依赖框架：
+pureLayout
 
 
 photoKit：
@@ -28,6 +29,8 @@ photoKit：
 5、PHImageManager：用于处理资源的加载，加载图片的过程带有缓存处理，可以通过传入一个 PHImageRequestOptions 控制资源的输出尺寸等规格
 
 6、PHImageRequestOptions：控制加载图片时的一系列参数
+
+![image](https://github.com/base0225/images/blob/master/asset.png)
 
 
 
