@@ -1,5 +1,5 @@
 # UpLoadImage
-一个类似于豆瓣的图片、视频上传功能，基于photoKit.
+一个类似于豆瓣的图片、视频上传、浏览、发布的功能，基于photoKit.
 
 功能：
 
@@ -13,7 +13,7 @@ pureLayout
 
 photoKit：
 
-2014年WWDC推出photoKit，适用于iOS8.0及以上版本，以前用ALAssetLibrary.
+2014年WWDC推出photoKit，适用于iOS8.0及以上版本，iOS8.0以前用ALAssetLibrary.
 简单介绍下photoKit:
 
 1、phAsset:存在照片资源，我理解为一张照片或视频的数据。
