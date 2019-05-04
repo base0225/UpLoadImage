@@ -68,11 +68,6 @@
     
     ZJBrowserCollectionCell *cell = [self.mainCollectionView dequeueReusableCellWithReuseIdentifier:@"ZJBrowserCollectionCell" forIndexPath:indexPath];
     ZJAssets *asset = [self.dataSource objectAtIndex:indexPath.row];
-//    if(indexPath.row % 2 == 0){
-//        cell.backgroundColor = [UIColor redColor];
-//    }else{
-//        cell.backgroundColor = [UIColor greenColor];
-//    }
     [cell bindMode:asset];
     return cell;
     

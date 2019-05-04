@@ -14,16 +14,29 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - HappyDNS (0.3.14)
   - PureLayout (3.0.2)
+  - Qiniu (7.2.5):
+    - HappyDNS (~> 0.3)
 
 DEPENDENCIES:
   - AFNetworking
   - PureLayout
+  - Qiniu
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - HappyDNS
+    - PureLayout
+    - Qiniu
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  HappyDNS: dc6a164ee81979093123c241c6353bcf0218add6
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
 
-PODFILE CHECKSUM: 4204665bf6ace35d351d08826f7ecdf31d474ed3
+PODFILE CHECKSUM: 20c38a24f8f06f8871f4c37cb3c55d6f2d140c64
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.6.1

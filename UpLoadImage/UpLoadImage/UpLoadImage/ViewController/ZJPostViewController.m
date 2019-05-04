@@ -57,6 +57,8 @@ static const CGFloat collectionViewInsetTop = 130;
 
 - (void)saveImage:(id)sender{
     NSLog(@"上传接口");
+//    https://developer.qiniu.com/kodo/sdk/1240/objc
+    
 }
 
 
@@ -77,7 +79,7 @@ static const CGFloat collectionViewInsetTop = 130;
     UICollectionViewCell *cell = nil;
     if(indexPath.row == 0){
         ZJDynamicImageAddCell *addimageCell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ZJDynamicImageAddCell" forIndexPath:indexPath];
-        [addimageCell bindmodelwithstr:@"最多添加20张"];
+        [addimageCell bindmodelwithstr:[NSString stringWithFormat:@"最多添加%ld张",(20 - self.dataSource.count)]];
         cell = addimageCell;
     }else
     {
@@ -87,6 +89,10 @@ static const CGFloat collectionViewInsetTop = 130;
         cell = imageCell;
     }
    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(([UIScreen mainScreen].bounds.size.width-60)/3.0f, ([UIScreen mainScreen].bounds.size.width-60)/3.0f);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -143,7 +149,7 @@ static const CGFloat collectionViewInsetTop = 130;
 - (UICollectionView *)collectionView{
     if(!_collectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.itemSize = CGSizeMake(100, 100);
+//        layout.itemSize = CGSizeMake(100, 100);
         layout.minimumInteritemSpacing = 10;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;

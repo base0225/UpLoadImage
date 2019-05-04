@@ -59,17 +59,6 @@
 }
 
 - (void)checkAuthorization{
-//    if([ZJPHAssertManger authorizationStatus] == ZJAssetAuthorizationStatusNotDetermined){
-//
-//        NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
-//        NSString *appName = [dic objectForKey:@"CFBundleDisplayName"];
-//        if(!appName){
-//            appName = [dic objectForKey:(NSString *)kCFBundleNameKey];
-//        }
-//        NSString *tips = [NSString stringWithFormat:@"请在设备的\"设置-隐私-照片\"选项中，允许%@访问你的手机相册",appName];
-//        self.tipsLabel.hidden = NO;
-//        self.tipsLabel.text = tips;
-//    }else{
         [ZJPHAssertManger requestAuthorization:^(ZJAssetAuthorizationStatus stauts) {
             NSLog(@"%@",[NSThread mainThread]);
             if(stauts != ZJAssetAuthorizationStatusNotAuthorized){

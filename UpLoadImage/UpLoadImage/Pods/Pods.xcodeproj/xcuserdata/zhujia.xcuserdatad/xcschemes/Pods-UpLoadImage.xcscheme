@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A6329FCE48BB965110B8F201B365D740"
+               BlueprintIdentifier = "4B87D033AD3DCB97FC075D132346E550"
+               BuildableName = "libPods-UpLoadImage.a"
                BlueprintName = "Pods-UpLoadImage"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-UpLoadImage.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
