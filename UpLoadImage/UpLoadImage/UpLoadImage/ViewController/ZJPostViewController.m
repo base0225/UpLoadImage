@@ -10,6 +10,13 @@
 #import "ZJDynamicImageCell.h"
 #import "ZJDynamicImageAddCell.h"
 #import "ZJAlbumViewController.h"
+#import <QiniuSDK.h>
+#import <QNConfiguration.h>
+#import <QN_GTM_Base64.h>
+#import <CommonCrypto/CommonDigest.h>
+#include <CommonCrypto/CommonHMAC.h>
+#import "QNUrlSafeBase64.h"
+#import "ZJAssets.h"
 
 static const CGFloat collectionViewInsetTop = 130;
 
@@ -21,6 +28,11 @@ static const CGFloat collectionViewInsetTop = 130;
 
 @property (nonatomic, strong) NSArray *dataSource;
 
+@property (nonatomic, copy) NSString *scope;
+@property (nonatomic, copy) NSString *accessKey;
+@property (nonatomic, copy) NSString *secretKey;
+@property (nonatomic, copy) NSString *uploadToken;
+
 @end
 
 @implementation ZJPostViewController
@@ -28,6 +40,10 @@ static const CGFloat collectionViewInsetTop = 130;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.scope = @"beth";
+    self.accessKey = @"";
+    self.secretKey = @"";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     
@@ -56,6 +72,11 @@ static const CGFloat collectionViewInsetTop = 130;
 #pragma mark -- UI Event
 
 - (void)saveImage:(id)sender{
+    
+    [self createToken];
+    
+    [self upLoadImage];
+    
     NSLog(@"上传接口");
 //    https://developer.qiniu.com/kodo/sdk/1240/objc
     
@@ -149,7 +170,6 @@ static const CGFloat collectionViewInsetTop = 130;
 - (UICollectionView *)collectionView{
     if(!_collectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-//        layout.itemSize = CGSizeMake(100, 100);
         layout.minimumInteritemSpacing = 10;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
@@ -162,5 +182,69 @@ static const CGFloat collectionViewInsetTop = 130;
     }
     return _collectionView;
 }
+
+#pragma mark -- Qiniu
+- (void)upLoadImage{
+  QNUploadManager *uploadManger = [[QNUploadManager alloc] init];
+    [self.dataSource enumerateObjectsUsingBlock:^(ZJAssets *asset, NSUInteger idx, BOOL * _Nonnull stop) {
+        [uploadManger putPHAsset:asset.phAsset key:nil token:self.uploadToken complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+            NSLog(@"%@",info);
+            NSLog(@"%@",key);
+
+        } option:nil];
+    }];
+}
+
+
+//获取token
+- (void)createToken {
+    if (!self.scope.length || !self.accessKey.length || !self.secretKey.length) {
+        return;
+    }
+    // 将上传策略中的scrop和deadline序列化成json格式
+    NSMutableDictionary *authInfo = [NSMutableDictionary dictionary];
+    [authInfo setObject:self.scope forKey:@"scope"];
+    [authInfo
+     setObject:[NSNumber numberWithLong:[[NSDate date] timeIntervalSince1970]]
+     forKey:@"deadline"];
+    
+    NSData *jsonData =
+    [NSJSONSerialization dataWithJSONObject:authInfo options:NSJSONWritingPrettyPrinted error:nil];
+    
+    // 对json序列化后的上传策略进行URL安全的base64编码
+    NSString *encodedString = [self urlSafeBase64Encode:jsonData];
+    
+    // 用secretKey对编码后的上传策略进行HMAC-SHA1加密，并且做安全的base64编码，得到encoded_signed
+    NSString *encodedSignedString = [self HMACSHA1:self.secretKey text:encodedString];
+    
+    // 将accessKey、encodedSignedString和encodedString拼接，中间用：分开，就是上传的token
+    NSString *token =
+    [NSString stringWithFormat:@"%@:%@:%@", self.accessKey, encodedSignedString, encodedString];
+    
+    self.uploadToken = token;
+    
+}
+
+- (NSString *)HMACSHA1:(NSString *)key text:(NSString *)text {
+    const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
+    const char *cData = [text cStringUsingEncoding:NSUTF8StringEncoding];
+
+    char cHMAC[CC_SHA1_DIGEST_LENGTH];
+
+    CCHmac(kCCHmacAlgSHA1, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
+
+    NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC length:CC_SHA1_DIGEST_LENGTH];
+    NSString *hash = [self urlSafeBase64Encode:HMAC];
+    return hash;
+}
+
+- (NSString *)urlSafeBase64Encode:(NSData *)text {
+    NSString *base64 =
+    [[NSString alloc] initWithData:[QN_GTM_Base64 encodeData:text] encoding:NSUTF8StringEncoding];
+    base64 = [base64 stringByReplacingOccurrencesOfString:@"+" withString:@"-"];
+    base64 = [base64 stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+    return base64;
+}
+
 
 @end
