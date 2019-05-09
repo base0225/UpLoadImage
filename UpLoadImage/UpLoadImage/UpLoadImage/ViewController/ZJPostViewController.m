@@ -33,6 +33,8 @@ static const CGFloat collectionViewInsetTop = 130;
 @property (nonatomic, copy) NSString *secretKey;
 @property (nonatomic, copy) NSString *uploadToken;
 
+@property (nonatomic , assign) int expires;
+
 @end
 
 @implementation ZJPostViewController
@@ -185,7 +187,11 @@ static const CGFloat collectionViewInsetTop = 130;
 
 #pragma mark -- Qiniu
 - (void)upLoadImage{
-  QNUploadManager *uploadManger = [[QNUploadManager alloc] init];
+    QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) {
+        builder.zone = [QNFixedZone zone2];
+    }];
+    
+    QNUploadManager *uploadManger = [[QNUploadManager alloc] initWithConfiguration:config];
     [self.dataSource enumerateObjectsUsingBlock:^(ZJAssets *asset, NSUInteger idx, BOOL * _Nonnull stop) {
         [uploadManger putPHAsset:asset.phAsset key:nil token:self.uploadToken complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
             NSLog(@"%@",info);
@@ -201,28 +207,34 @@ static const CGFloat collectionViewInsetTop = 130;
     if (!self.scope.length || !self.accessKey.length || !self.secretKey.length) {
         return;
     }
+    
+    time_t deadline;
+    time(&deadline);//返回当前系统时间
+    //@property (nonatomic , assign) int expires; 怎么定义随你...
+    deadline += (_expires > 0) ? _expires : 3600;
+    
     // 将上传策略中的scrop和deadline序列化成json格式
     NSMutableDictionary *authInfo = [NSMutableDictionary dictionary];
     [authInfo setObject:self.scope forKey:@"scope"];
     [authInfo
-     setObject:[NSNumber numberWithLong:[[NSDate date] timeIntervalSince1970]]
+     setObject:[NSNumber numberWithLong:deadline]
      forKey:@"deadline"];
-    
+
     NSData *jsonData =
     [NSJSONSerialization dataWithJSONObject:authInfo options:NSJSONWritingPrettyPrinted error:nil];
-    
+
     // 对json序列化后的上传策略进行URL安全的base64编码
     NSString *encodedString = [self urlSafeBase64Encode:jsonData];
-    
+
     // 用secretKey对编码后的上传策略进行HMAC-SHA1加密，并且做安全的base64编码，得到encoded_signed
     NSString *encodedSignedString = [self HMACSHA1:self.secretKey text:encodedString];
-    
+
     // 将accessKey、encodedSignedString和encodedString拼接，中间用：分开，就是上传的token
     NSString *token =
     [NSString stringWithFormat:@"%@:%@:%@", self.accessKey, encodedSignedString, encodedString];
-    
+
     self.uploadToken = token;
-    
+
 }
 
 - (NSString *)HMACSHA1:(NSString *)key text:(NSString *)text {
