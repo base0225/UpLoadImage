@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** View's height */
 @property (nonatomic, assign) CGFloat height;
 
+@property (nonatomic, assign) CGSize size;
+
 /**
  Centers the view to its parent view (if exists)
  */

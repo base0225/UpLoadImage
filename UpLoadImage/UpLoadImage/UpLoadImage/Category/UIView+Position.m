@@ -30,6 +30,11 @@
     self.frame = r;
 }
 
+-(void)setSize:(CGSize)size{
+    self.width      = size.width;
+    self.height     = size.height;
+}
+
 - (void)setHeight:(CGFloat)height{
     CGRect r = self.frame;
     r.size.height = height;
@@ -50,6 +55,10 @@
 
 - (CGFloat)height{
     return self.frame.size.height;
+}
+
+-(CGSize)size{
+    return CGSizeMake(self.width, self.height);
 }
 
 - (void)centerToParent{

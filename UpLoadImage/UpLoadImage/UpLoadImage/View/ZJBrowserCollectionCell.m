@@ -25,54 +25,64 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if(self = [super initWithFrame:frame]){
-        
         [self constructView];
-        
     }
     return self;
 }
 
 - (void)constructView{
  
-//    _scrollView = [[UIScrollView alloc] init];
-//    _scrollView.frame = CGRectMake(0, 0, self.width, self.height);
-//    _scrollView.delegate = self;
-//    _scrollView.backgroundColor = [UIColor blackColor];
-//    _scrollView.showsHorizontalScrollIndicator = false;
-//    _scrollView.showsVerticalScrollIndicator = false;
-//
-//    _scrollView.minimumZoomScale = 1.0f;
-//    _scrollView.maximumZoomScale = 3.0f;
-//    _scrollView.zoomScale = 1.0f;
-//    _scrollView.contentOffset = CGPointZero;
-//    _scrollView.alwaysBounceVertical = YES;
-//    _scrollView.alwaysBounceHorizontal = YES;
-//    _scrollView.bouncesZoom = YES;
-//    _scrollView.multipleTouchEnabled = YES;
-//    _scrollView.scrollsToTop = NO;
-//    _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    _scrollView.delaysContentTouches = NO;
-//    _scrollView.canCancelContentTouches = YES;
-//    [self addSubview:_scrollView];
+    _scrollView = [[UIScrollView alloc] init];
+    _scrollView.frame = CGRectMake(0, 0, self.width, self.height);
+    _scrollView.delegate = self;
+    _scrollView.backgroundColor = [UIColor blackColor];
+    _scrollView.showsHorizontalScrollIndicator = false;
+    _scrollView.showsVerticalScrollIndicator = false;
+    if (@available(iOS 11.0, *)) {
+        _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    _scrollView.minimumZoomScale = 1.0f;
+    _scrollView.maximumZoomScale = 3.0f;
+    _scrollView.zoomScale = 1.0f;
+    _scrollView.contentOffset = CGPointZero;
+    _scrollView.alwaysBounceVertical = YES;
+    _scrollView.alwaysBounceHorizontal = YES;
+    _scrollView.bouncesZoom = YES;
+    _scrollView.multipleTouchEnabled = YES;
+    _scrollView.scrollsToTop = NO;
+    _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _scrollView.delaysContentTouches = NO;
+    _scrollView.canCancelContentTouches = YES;
+    [self addSubview:_scrollView];
     
     _imgView = [[UIImageView alloc] init];
     _imgView.clipsToBounds = YES;
-    [self.contentView addSubview:_imgView];
+    [_scrollView addSubview:_imgView];
     
-    [_imgView autoSetDimension:ALDimensionHeight toSize:[UIScreen mainScreen].bounds.size.height-44.0f];
-    [_imgView autoSetDimension:ALDimensionWidth toSize:[UIScreen mainScreen].bounds.size.width];
-    [_imgView autoPinEdgeToSuperviewEdge:ALEdgeLeading];
-    [_imgView autoPinEdgeToSuperviewEdge:ALEdgeTrailing];
+}
+
+- (CGPoint)centerOfScrollViewContent:(UIScrollView *)scrollView {
     
+    CGFloat offsetX = ([UIScreen mainScreen].bounds.size.width > scrollView.contentSize.width) ? (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
+    CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height) ? (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
+    CGPoint center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,scrollView.contentSize.height * 0.5 + offsetY);
+    
+    return center;
 }
 
 - (void)bindMode:(ZJAssets *)assets{
     
     _tempAssets = assets;
-    [_tempAssets requestPreviewImageWithCompletion:^(UIImage * _Nonnull result, NSDictionary<NSString *,id> * _Nonnull info) {
+    [_tempAssets requestPreviewImageWithCompletion:^(UIImage *result, NSDictionary<NSString *,id> * info) {
         if(result){
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.imgView.image = result;
+                CGFloat imageWidth = [UIScreen mainScreen].bounds.size.width;
+                CGFloat imageHeight = result.size.height * imageWidth / result.size.width;
+                self->_imgView.width = imageWidth;
+                self->_imgView.height = imageHeight;
+                self->_imgView.image = result;
+                self->_scrollView.contentSize = self->_imgView.size;
+                self->_imgView.center = [self centerOfScrollViewContent:self->_scrollView];
             });
         }
     } withProgressHandler:^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
