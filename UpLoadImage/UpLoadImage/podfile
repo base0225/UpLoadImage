@@ -3,4 +3,5 @@ target 'UpLoadImage' do
 pod "AFNetworking"
 pod 'PureLayout'
 pod 'Qiniu'
+pod 'FLEX', '~> 2.0', :configurations => ['Debug']
 end
