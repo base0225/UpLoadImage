@@ -53,11 +53,14 @@
     _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _scrollView.delaysContentTouches = NO;
     _scrollView.canCancelContentTouches = YES;
-    [self addSubview:_scrollView];
+    [self.contentView addSubview:_scrollView];
     
     _imgView = [[UIImageView alloc] init];
     _imgView.clipsToBounds = YES;
     [_scrollView addSubview:_imgView];
+    
+    [self addGestureRecognizer:self.singleTap];
+    [self addGestureRecognizer:self.doubleTap];
     
 }
 
@@ -71,7 +74,6 @@
 }
 
 - (void)bindMode:(ZJAssets *)assets{
-    
     _tempAssets = assets;
     [_tempAssets requestPreviewImageWithCompletion:^(UIImage *result, NSDictionary<NSString *,id> * info) {
         if(result){
@@ -88,7 +90,15 @@
     } withProgressHandler:^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
         
     }];
-    
+}
+
+// 需要缩放的控件
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.imgView;
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    self.imgView.center = [self centerOfScrollViewContent:scrollView];
 }
 
 
@@ -97,7 +107,7 @@
 }
 
 - (void)onDoubleTap:(UIGestureRecognizer *)gesture{
-    NSLog(@"双击了屏幕");
+    
 }
 
 
