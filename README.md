@@ -2,20 +2,22 @@
 一个类似于豆瓣的图片、视频上传、浏览、发布的功能，基于photoKit。
 集成七牛，本地生成token，上传图片至七牛空间存储。
 
-功能：
+🐤 一、功能：
 
 ![image](https://github.com/base0225/images/blob/master/uploadImage.png)
 
 
 
-依赖框架：
+🐤 二、依赖框架：
 
-pureLayout
+pureLayout: 自动布局
 
-Qiniu
+Qiniu: 七牛sdk
+
+FLEX: 调试
 
 
-photoKit：
+🐤 三、photoKit：
 
 2014年WWDC推出photoKit，适用于iOS8.0及以上版本，iOS8.0以前用ALAssetLibrary.
 简单介绍下photoKit:
