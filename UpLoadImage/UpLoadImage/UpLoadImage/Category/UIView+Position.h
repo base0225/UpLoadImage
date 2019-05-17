@@ -23,6 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) CGSize size;
 
+/** Y vale representing the bottom of the view **/
+@property (nonatomic, assign) CGFloat   bottom;
+
+/** X Value representing the right side of the view **/
+@property (nonatomic, assign) CGFloat   right;
+
 /**
  Centers the view to its parent view (if exists)
  */

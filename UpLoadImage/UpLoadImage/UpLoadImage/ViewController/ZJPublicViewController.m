@@ -59,7 +59,6 @@ static NSString *cellId = @"cellId";
     [self.collectionView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.collectionView autoSetDimension:ALDimensionHeight toSize:iconWidth *2  + itemLineSpace];
     
-    
 }
 
 
@@ -81,7 +80,6 @@ static NSString *cellId = @"cellId";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     if(indexPath.row == 0){
         ZJPostViewController *postViewController = [[ZJPostViewController alloc] init];
         postViewController.modalPresentationStyle = UIModalPresentationFullScreen;
@@ -118,7 +116,6 @@ static NSString *cellId = @"cellId";
 - (UICollectionView *)collectionView{
     
     if(!_collectionView){
-        
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.itemSize = CGSizeMake(iconWidth, iconWidth);
         flowLayout.minimumLineSpacing = itemLineSpace;

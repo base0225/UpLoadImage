@@ -41,6 +41,22 @@
     self.frame = r;
 }
 
+- (void)setRight:(CGFloat)right {
+    CGRect frame = self.frame;
+    frame.origin.x = right - frame.size.width;
+    self.frame = frame;
+}
+
+- (void)setBottom:(CGFloat)bottom {
+    CGRect frame = self.frame;
+    frame.origin.y = bottom - frame.size.height;
+    self.frame = frame;
+}
+
+- (CGFloat)bottom {
+    return self.frame.origin.y + self.frame.size.height;
+}
+
 - (CGFloat)x{
     return self.frame.origin.x;
 }
@@ -57,7 +73,11 @@
     return self.frame.size.height;
 }
 
--(CGSize)size{
+- (CGFloat)right {
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (CGSize)size{
     return CGSizeMake(self.width, self.height);
 }
 
