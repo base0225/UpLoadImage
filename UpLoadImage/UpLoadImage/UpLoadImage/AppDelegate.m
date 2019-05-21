@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ZJRootNavigationViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +17,13 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    ViewController *viewController = [[ViewController alloc] init];
+    ZJRootNavigationViewController *rootViewController = [[ZJRootNavigationViewController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = rootViewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

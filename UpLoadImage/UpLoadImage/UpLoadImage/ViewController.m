@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ZJPublicViewController.h"
+#import "AppDelegate.h"
 #if DEBUG
 #import "FLEXManager.h"
 #endif
@@ -26,6 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
 #if DEBUG
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     button.right = [UIScreen mainScreen].bounds.size.width - 10.0f;
@@ -33,8 +36,9 @@
     [button setBackgroundColor:[UIColor purpleColor]];
     [button addTarget:self action:@selector(debugButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [[UIApplication sharedApplication].keyWindow addSubview:button];
+//    [[(AppDelegate *)[UIApplication sharedApplication].delegate window] addSubview:button];
 #endif
-    
+        
     UIButton *clickButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [clickButton setBackgroundColor:[UIColor greenColor]];
     [clickButton setTitle:@"点我呀" forState:UIControlStateNormal];
